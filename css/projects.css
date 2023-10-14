@@ -1,0 +1,43 @@
+.paper_title {
+    font-size: var(--medium-font);
+    /* text-decoration: underline; */
+    font-style: italic;
+    padding: 1em 0 0.5em 0;
+}
+
+.paper_descriptions {
+    font-size: var(--small-font);
+    padding: 0 0 0.5em 0;
+}
+
+.even {
+    background-color: var(--div-grey);
+    height: auto;
+    padding: 0 0 2em 0;
+}
+
+.odd {
+    background-color: var(--div-white);
+    height: auto;
+    padding: 0 0 2em 0;
+}
+
+.project_subimage {
+    width: 25%;
+    max-width: 25%;
+    font-size: var(--small-font);
+}
+
+.project_subimage img {
+    width: 100%;
+}
+
+.download_pdf {
+    font-size: var(--script-font);
+    padding: 0 0 0.5em 0;
+}
+
+.publisher_info {
+    font-size: var(--script-font);
+    padding: 0 0 0.5em 0;
+}

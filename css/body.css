@@ -15,7 +15,7 @@ main {
 }
 
 #name {
-    padding: 1em 0 1em 0;
+    padding: 1em 0 0.5em 0;
     font-size: var(--large-font);
 }
 
@@ -38,7 +38,8 @@ main {
 
 
 #statement {
-    margin: 0 20vw 2em 20vw;
+    width:75%;
+    margin: 0 auto 1em auto;
     font-size: var(--small-font);
     text-align: justify;
 }
@@ -81,7 +82,7 @@ main {
     text-decoration: underline;
     font-style: italic;
     font-size: var(--small-font);
-    padding: 0.5em 0 0.5em 0;
+    padding: 0.5em 0 1.5em 0;
 }
 
 .bubble {
