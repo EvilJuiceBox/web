@@ -10,6 +10,9 @@ main {
     transition: 1s; /* Adds a transition effect when the padding is decreased */
 }
 
+#aboutme img {
+    width:20%;
+}
 
 #name {
     padding: 1em 0 1em 0;
@@ -38,6 +41,14 @@ main {
     margin: 0 20vw 2em 20vw;
     font-size: var(--small-font);
     text-align: justify;
+}
+
+
+#random {
+    margin: 0 20vw 2em 20vw;
+    font-size: var(--small-font);
+    text-align: center;
+    width:60%;
 }
 
 .grey {

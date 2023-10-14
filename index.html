@@ -19,16 +19,21 @@
     <main id="main">
         <!-- About me block, includes my image and brief contacts. -->
         <div id="aboutme">
-            <img src="./images/me.png">
+            <img src="./images/me.png" alt="A picture of Kira">
             <p id="name">Kenneth (Kira) H. Chan</p>
             <div id="contacts">
                 <ul>
-                    <li><span>email: chanken1@msu.edu</span></li>
+                    <li><span>email: <a href="mailto:chanken1@msu.edu">chanken1@msu.edu</a></span></li>
                     <li><a href="linkedin.com">Connect with me via LinkedIn</a></li>
                 </ul>
             </div>
             <div id="statement">
                 <p>Hello, I am a Ph.D. student at the Department of Computer Science and Engineering at Michigan State University. My research field is the assurance and robustness of learning enabled systems (AI/ML powered systems). I apply a number of disciplines, such as evolutionary computing (e.g., novelty search), non-cooperative game theory, reinforcement learning, and other related techniques to address / improve the robustness of learning-enabled systems.</p>
+            </div>
+
+            <div id="random">
+                <a id="random_quote">
+                    Random: I grow my hair out to donate it annually for charity!</a>
             </div>
         </div>
 
@@ -36,9 +41,9 @@
         <div class="grey">
             <div class="subtitle">Research Interest</div>
             <div class="container">
-                <div class="bubble"><p>Machine Learning (DNN)</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Software / Requirements Engineering</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Evolutionary Computing</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Machine Learning (DNN)</p><img src="./images/dnn.png" alt="Image of a DNN with nodes connecting to edges."></div>
+                <div class="bubble"><p>Software / Requirements Engineering</p><img src="./images/software_engineering.png" alt="Software Engineering Icon of a laptop with <> symbols"></div>
+                <div class="bubble"><p>Evolutionary Computing</p><img src="./images/evolutionarycomputing.png" alt="A clipart of a gene."></div>
             </div>
             <div class="description">
                 <p>I use evolutionary computing techniques to address the robustness of ML / DNN components in safety-critical software (i.e., those that can have real-world consequences when they fail). Specifically, we aim to develop robust learning enabled systems do not fail when facing data that deviate from the expected distribution(s). Furthermore, we design alternate fail-safe capabilities to ensure that if the learning-enable system fails, it will fail in a safe manner.</p>
@@ -49,9 +54,9 @@
         <div class="white">
             <div class="subtitle">Applications</div>
             <div class="container">
-                <div class="bubble"><p>Autonomous driving</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Self-Adaptive Systems (SAS)</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Data</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Autonomous driving</p><img src="./images/autonomousvehicle.png" alt="A clipart of a vehicle with the software symbols <> above it."></div>
+                <div class="bubble"><p>Self-Adaptive Systems (SAS)</p><img src="./images/selfadaptivesystem.png" alt="A clipart of an adaptive system, similar to the recycling system."></div>
+                <div class="bubble"><p>Data</p><img src="./images/data.png" alt="Image of a graph for data."></div>
             </div>
             <div class="description">
                 <p>As the capabilities and applications of DNNs are impressive and revolutionary, we are beginning to see more and more safety-critical systems rely on DNNs for decision making. I am interested in technology that can ensure that DNNs can be trusted.</p>
@@ -62,12 +67,12 @@
         <div class="grey">
             <div class="subtitle">My Interest</div>
             <div class="container">
-                <div class="bubble"><p>Cooking</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Guitar</p><img src="./images/placeholder.png"></div>
-                <div class="bubble"><p>Exploring Local Coffee Shops</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Cooking</p><img src="./images/cooking.png" alt="A clipart of a chef."></div>
+                <div class="bubble"><p>Guitar</p><img src="./images/guitar.png" alt="A clipart of a Guitar"></div>
+                <div class="bubble"><p>Exploring Local Coffee Shops</p><img src="./images/coffee.png" alt="A perfect cup of coffee."></div>
             </div>
             <div class="description">
-                <p>I have a wide range of hobbies. Some of my hobbies include cooking, Tennis, music, my quest to search for the person cup of coffee, etc. </p>
+                <p>I have a wide range of hobbies. Some of my hobbies include cooking, Tennis, music, my quest to search for the perfect cup of coffee, etc. </p>
             </div>
         </div>
 
@@ -78,5 +83,6 @@
     <footer>© 2023 Kira Chan</footer>
 	<script src="./js/index.js"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/random.js" defer></script>
   </body>
 </html>
