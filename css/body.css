@@ -1,0 +1,49 @@
+body{
+    font: normal, Arial, sans-serif;
+    text-align: center;
+    color: var(--font-color);
+}
+
+main {
+    margin: auto;
+    padding: 16em 0 0 0;
+    transition: 1s; /* Adds a transition effect when the padding is decreased */
+}
+
+
+#name {
+    padding: 1em 0 1em 0;
+    font-size: var(--large-font);
+}
+
+#contacts {
+    margin-right: var(--document-padding);
+    font-size: var(--small-font);
+    display:inline;
+    align-items:center;
+}
+
+#contacts ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contacts li {
+    margin: 0 0 0 1em;
+}
+
+#contacts a{
+    
+}
+
+#statement {
+    margin: 0 14em 2em 14em;
+    font-size: var(--small-font);
+    text-align: justify;
+}
+
+.grey {
+    background-color: var(--div-grey);
+    height: 30em;
+}

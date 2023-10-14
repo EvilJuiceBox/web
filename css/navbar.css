@@ -1,19 +1,87 @@
+
+/* padding: top right bottom left */
+
 #header {
     overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+    /* background-color: #f1f1f1; */
+    padding: 0 0 0 0; /* Large padding which will shrink on scroll (using JS) */
+    margin: 0 0 0 0;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; /* At the top */
     z-index: 99;
-    background-image: url("./img/Echoes_03.png");
+    background-image: url("../images/banner.png");
     min-height: 5em;
-    height: 25em;
+    height: 15em;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover
+    background-size: cover;
+    box-shadow: 0px 1em 3px -1em var(--persian-indigo);
   }
+
+#header a {
+    text-decoration: none;
+    color: var(--font-color);
+    font: var(--large-font) 16px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#header a:hover {
+  /* color: var(--navbar-hover-colour); */
+  color: var(--persian-indigo);
+}
+
+#navbar{
+    overflow: hidden;
+    margin: auto;
+    background-color: var(--navbar-background-colour);
+    min-height: var(--navbar-height);
+    max-height: var(--navbar-height);
+    font-size: var(--navbar-button-size);
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    /* padding: 0 var(--document-padding) 0 var(--document-padding); */
+    text-decoration: none;
+    color: black;
+}
+
+#navbar-left {
+  width: auto;
+  height: 100%;
+  margin-left: var(--document-padding);
+  /* margin-right: auto; */
+  float: left;
+  display: flex;
+  align-items:center;
+}
+
+
+#navbar-right {
+    width: fit-content;
+    height: 100%;
+    margin-left: auto;
+    margin-right: var(--document-padding);
+    float: right;
+    display: flex;
+    align-items:center;
+} 
+
+#navbar li {
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#navbar li:not(:last-child) {
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 2.5em 0 0;
+}
+
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 580px) {
