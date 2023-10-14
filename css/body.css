@@ -10,7 +10,7 @@ main {
     transition: 1s; /* Adds a transition effect when the padding is decreased */
 }
 
-#aboutme img {
+#kira {
     width:20%;
 }
 
@@ -121,4 +121,9 @@ main {
     width:auto;
     align-items: right;
     float: right;
+}
+
+.logo {
+    height: 1.5em;
+    margin: 0 auto 0 auto;
 }
