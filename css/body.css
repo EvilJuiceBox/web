@@ -33,17 +33,80 @@ main {
     margin: 0 0 0 1em;
 }
 
-#contacts a{
-    
-}
 
 #statement {
-    margin: 0 14em 2em 14em;
+    margin: 0 20vw 2em 20vw;
     font-size: var(--small-font);
     text-align: justify;
 }
 
 .grey {
     background-color: var(--div-grey);
-    height: 30em;
+    height: auto;
+    padding: 0 0 2em 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 1em 0;
+}
+
+.container_image {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto 2em auto;
+    width: 70%;
+}
+
+.subtitle {
+    font-size: var(--medium-font);
+    padding: 1em 0 0.5em 0;
+}
+
+.subtitle2 {
+    text-decoration: underline;
+    font-style: italic;
+    font-size: var(--small-font);
+    padding: 0.5em 0 0.5em 0;
+}
+
+.bubble {
+    width: 25%;
+    font-size: var(--small-font);
+}
+
+.bubble p {
+    padding: 0 0 0.5em 0;
+}
+
+.bubble img {
+    max-width: 50%;
+    
+}
+
+.description {
+    width: 75%;
+    font-size: var(--small-font);
+    margin: 0 auto 0 auto;
+    text-align: justify;
+}
+
+.white {
+    background-color: var(--div-white);
+    height: auto;
+    padding: 0 0 2em 0;
+}
+
+.wide_image img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.image_credit {
+    width:auto;
+    align-items: right;
+    float: right;
 }

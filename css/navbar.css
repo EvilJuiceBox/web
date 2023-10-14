@@ -29,6 +29,7 @@
 #header a:hover {
   /* color: var(--navbar-hover-colour); */
   color: var(--persian-indigo);
+  text-decoration: underline;
 }
 
 #navbar{

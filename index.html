@@ -9,33 +9,15 @@
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/body.css"> -->
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
   </head>
   <body>
     <header id="header">
-        <div id="navbar">
-            <div id="navbar-left">
-                <ul>
-                    <li>
-                        <a href="#default" id="logo">Kenneth (Kira) H. Chan</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div id="navbar-right">
-                <ul>
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a class="active" href="">Projects</a></li>
-                    <li><a href="#contact">Teaching / Academics</a></li>
-                    <li><a class="active" href="#home">People</a></li>
-                    <li><a class="active" href="#home">Resume</a></li>
-                    <li><a class="active" href="#home">CV</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </div>
-        </div>
+
     </header>
     <main id="main">
+        <!-- About me block, includes my image and brief contacts. -->
         <div id="aboutme">
             <img src="./images/me.png">
             <p id="name">Kenneth (Kira) H. Chan</p>
@@ -46,15 +28,55 @@
                 </ul>
             </div>
             <div id="statement">
-                <p>Hello, I am a Ph.D. student at the Deparment of Computer Science and Engineering at Michigan State University. My research field is the assurance and robustness of learning enabled systems (AI/ML powered systems). I apply a number of disciplines, such as evolutionary computing (e.g., novelty search), non-cooperative game theory, reinforcement learning, and other related techniques to address / improve the robustness of learning-enabled systems.</p>
+                <p>Hello, I am a Ph.D. student at the Department of Computer Science and Engineering at Michigan State University. My research field is the assurance and robustness of learning enabled systems (AI/ML powered systems). I apply a number of disciplines, such as evolutionary computing (e.g., novelty search), non-cooperative game theory, reinforcement learning, and other related techniques to address / improve the robustness of learning-enabled systems.</p>
             </div>
         </div>
+
+        <!-- My research interest -->
         <div class="grey">
-            Lorem ipsum
+            <div class="subtitle">Research Interest</div>
+            <div class="container">
+                <div class="bubble"><p>Machine Learning (DNN)</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Software / Requirements Engineering</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Evolutionary Computing</p><img src="./images/placeholder.png"></div>
+            </div>
+            <div class="description">
+                <p>I use evolutionary computing techniques to address the robustness of ML / DNN components in safety-critical software (i.e., those that can have real-world consequences when they fail). Specifically, we aim to develop robust learning enabled systems do not fail when facing data that deviate from the expected distribution(s). Furthermore, we design alternate fail-safe capabilities to ensure that if the learning-enable system fails, it will fail in a safe manner.</p>
+            </div>
         </div>
+
+        <!-- My research applications -->
+        <div class="white">
+            <div class="subtitle">Applications</div>
+            <div class="container">
+                <div class="bubble"><p>Autonomous driving</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Self-Adaptive Systems (SAS)</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Data</p><img src="./images/placeholder.png"></div>
+            </div>
+            <div class="description">
+                <p>As the capabilities and applications of DNNs are impressive and revolutionary, we are beginning to see more and more safety-critical systems rely on DNNs for decision making. I am interested in technology that can ensure that DNNs can be trusted.</p>
+            </div>
+        </div>
+
+        <!-- My personal interest -->
+        <div class="grey">
+            <div class="subtitle">My Interest</div>
+            <div class="container">
+                <div class="bubble"><p>Cooking</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Guitar</p><img src="./images/placeholder.png"></div>
+                <div class="bubble"><p>Exploring Local Coffee Shops</p><img src="./images/placeholder.png"></div>
+            </div>
+            <div class="description">
+                <p>I have a wide range of hobbies. Some of my hobbies include cooking, Tennis, music, my quest to search for the person cup of coffee, etc. </p>
+            </div>
+        </div>
+
     </main>
+
+    
     
     <footer>© 2023 Kira Chan</footer>
 	<script src="./js/index.js"></script>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

@@ -1,0 +1,54 @@
+.title {
+    margin: 1em 0 0 0;
+    font-size: var(--large-font);
+}
+
+#msu {
+    background-image: url(../images/msu_picture.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 1em 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30em;
+    width: 75%;
+    margin: 0 auto 1em auto;
+}
+
+
+#msu img {
+    height: 15em;
+    object-fit:contain;
+    overflow: hidden;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.award {
+    display: inline-flex;
+    width: 75%;
+    padding: 0.5em 5em 0.5em 5em;
+}
+
+.award_img {
+    margin: auto 0 auto 3em;
+    width: 15%;
+}
+
+.award_name {
+    width: 50%;
+    font-size: var(--small-font);
+    margin: auto;
+    text-align: center;
+}
+
+.award_amount {
+    font-size: var(--small-font);
+    /* margin: auto; */
+    margin: auto 3em auto 0;
+    width: 10%;
+}

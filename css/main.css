@@ -1,6 +1,7 @@
 @import "navbar.css";
 @import "reset.css";
 @import "body.css";
+@import "academic.css";
 
 
 /* padding: top right bottom left */
@@ -25,6 +26,7 @@
 
     /* Main page content */
     --div-grey: #eeeeee;
+    --div-white: #ffffff;
 }
 
 footer {
