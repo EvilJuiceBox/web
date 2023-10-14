@@ -1,0 +1,29 @@
+.cheng {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto 0em auto;
+    width: 30%;
+}
+
+.cheng img {
+    width:100%;
+}
+
+.cheng_credit {
+    width: auto;
+}
+
+.thanks {
+    width: fit-content;
+    margin: 1em auto 1em auto;
+    font-size: var(--script-font);
+}
+
+.thanks {
+    text-align: left;
+}
+
+.flower {
+    width: 1.5em;
+}
