@@ -73,6 +73,10 @@ main {
     width: 70vw;
 }
 
+.container_image img {
+    width: 70vw;
+}
+
 .subtitle {
     font-size: var(--medium-font);
     padding: 1rem 0 0.5rem 0;
