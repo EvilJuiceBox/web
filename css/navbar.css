@@ -115,7 +115,7 @@
     }
 
     #hamburger_menu img{
-      max-height: 6vw; 
+      max-height: calc(2.5vw + 2.5vh); 
     }
 
     #navbar_right {
@@ -140,7 +140,20 @@
       text-align: left;
     }
 
-    #navbar li:not(:last-child) {
+    #navbar li {
       margin: 0.3vw 3vw 0 0;
     }
+  }
+
+  @media screen and (min-width: 1001px) {
+    #navbar_right {
+      width: fit-content;
+      /* height: 100vw; */
+      margin-left: auto;
+      margin-right: var(--document-padding);
+      float: right;
+      display: flex;
+      align-items:center;
+  } 
+  
   }

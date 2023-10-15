@@ -6,7 +6,7 @@ body{
 
 main {
     margin: auto;
-    padding: 16rem 0 0 0;
+    padding: 22vh 0 0 0;
     transition: 1s; /* Adds a transition effect when the padding is decreased */
 }
 
