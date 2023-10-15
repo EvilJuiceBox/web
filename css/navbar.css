@@ -105,7 +105,7 @@
 
     #hamburger_menu {
       display: inline;
-      margin-right: auto;
+      margin-right: 10vw;
       /* max-height: 8vw;  */
     }
 
@@ -134,8 +134,9 @@
     }
 
     #navbar_right ul {
-      width: 20vw;
+      width: 100px;
       margin: auto auto auto auto;
+      padding-right: 5vw;
       text-align: left;
     }
   }
