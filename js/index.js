@@ -2,6 +2,8 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+// ORDER OF OPERATION MATTERS
+  // First close the menu bar if open
   if (document.getElementById("ham_toggled").checked)
   {
     document.getElementById("ham_toggled").checked = false;
@@ -10,6 +12,8 @@ function scrollFunction() {
     document.getElementById("navbar").style.height = "5vh";
   }
 
+
+  // make header smaller
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("header").style.padding = "2vh 2vh";
     document.getElementById("header").style.height = "5vh";
@@ -24,19 +28,4 @@ function scrollFunction() {
   document.getElementById("navbar_right").style.display = "";
 
   
-
-  // // window.screen.height;
-  // // window.screen.width;
-  // if (window.screen.width < 1000)  {
-  //   console.log("testing")
-  //   let x = document.getElementById("navbar_right");
-  //   let header = document.getElementById("header");
-  //   let navbar = document.getElementById("navbar");
-  
-  //   x.style.display = "none";
-  //   header.style.height = "20vh";
-  //   navbar.style.height = "5vh";
-  // }
-
-
 }

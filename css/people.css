@@ -12,6 +12,7 @@
 
 .cheng_credit {
     width: auto;
+    font-size: var(--script-font);
 }
 
 .thanks {
