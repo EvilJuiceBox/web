@@ -88,11 +88,12 @@
   display: none;
 }
 
+#ham_toggled {
+  display: none;
+}
+
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 1000px) {
-    /* #header {
-      padding: 20px 10px !important; 
-    } */
     #navbar a {
       float: none;
       display: block;
@@ -112,7 +113,6 @@
     #hamburger_button {
       border: none;
       background-color: white;
-      font-size: 1px;
     }
 
     #hamburger_menu img{
@@ -156,6 +156,10 @@
     border-radius: 4px;
     display: inline-block;
     min-width: 110px;
+  }
+
+  #ham_toggled {
+    display: none;
   }
 }
 
