@@ -2,36 +2,36 @@
 
 .music {
     display: inline-flex;
-    width: 80%;
-    padding: 0.5em 3em 1em 3em;
+    width: 80vw;
+    padding: 0.5rem 3rem 1rem 3rem;
 }
 
 .music_img {
-    margin: auto 0 auto 3em;
-    width: 7.5%;
+    margin: auto 0 auto 3rem;
+    width: 7.5vw;
 }
 
 .music_name {
-    width: 30%;
+    width: 30vw;
     font-size: var(--small-font);
     margin: auto;
     text-align: center;
-    padding: 0 0.5em 0 0.5em;
+    padding: 0 0.5rem 0 0.5rem;
     text-decoration: underline;
 }
 
 .music_album {
-    width: 30%;
+    width: 30vw;
     font-size: var(--small-font);
     margin: auto;
     text-align: center;
-    padding: 0 0.5em 0 0.5em;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .music_year {
     font-size: var(--small-font);
     /* margin: auto; */
-    margin: auto 3em auto 0;
-    padding: 0 0.5em 0 0.5em;
-    width: 10%;
+    margin: auto 3rem auto 0;
+    padding: 0 0.5rem 0 0.5rem;
+    width: 10vw;
 }

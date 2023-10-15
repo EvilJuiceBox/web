@@ -8,16 +8,16 @@
     margin: 0 0 0 0;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
-    width: 100%;
+    width: 100vw;
     top: 0; /* At the top */
     z-index: 99;
     background-image: url("../images/banner.png");
-    min-height: 5em;
-    height: 15em;
+    min-height: 5vh;
+    height: 20vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 1em 3px -1em var(--persian-indigo);
+    box-shadow: 0px 1rem 3px -1rem var(--persian-indigo);
   }
 
 #header a {
@@ -33,13 +33,14 @@
 }
 
 #navbar{
+    transition: 0.4s;
     overflow: hidden;
     margin: auto;
     background-color: var(--navbar-background-colour);
     min-height: var(--navbar-height);
-    max-height: var(--navbar-height);
+    height: var(--navbar-height);
     font-size: var(--navbar-button-size);
-    width: 100%;
+    width: 100vw;
     z-index: 99;
     position: absolute;
     bottom: 0;
@@ -53,7 +54,7 @@
 
 #navbar-left {
   width: auto;
-  height: 100%;
+  height: 100vw;
   margin-left: var(--document-padding);
   /* margin-right: auto; */
   float: left;
@@ -64,7 +65,7 @@
 
 #navbar-right {
     width: fit-content;
-    height: 100%;
+    /* height: 100vw; */
     margin-left: auto;
     margin-right: var(--document-padding);
     float: right;
@@ -80,21 +81,64 @@
 #navbar li:not(:last-child) {
   border-radius: 4px;
   display: inline-block;
-  margin: 0 2em 0 0;
+  margin: 0 3vw 0 0;
 }
 
+#hamburger_menu {
+  display: none;
+}
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 580px) {
-    #header {
-      padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
-    }
+@media screen and (max-width: 1000px) {
+    /* #header {
+      padding: 20px 10px !important; 
+    } */
     #navbar a {
       float: none;
       display: block;
       text-align: left;
     }
-    #navbar-right {
-      float: none;
+
+    #navbar-left {
+      width: 75vw;
     }
+
+    #hamburger_menu {
+      display: inline;
+      margin-right: auto;
+      /* max-height: 8vw;  */
+    }
+
+    #hamburger_button {
+      border: none;
+      background-color: white;
+    }
+
+    #hamburger_menu img{
+      max-height: 6vw; 
+    }
+
+
+    
+    #navbar-right {
+      /* float: none; */
+      overflow-y: hidden;
+      overflow: hidden;
+      transition: all 0.5s ease-in;
+      margin: auto auto auto auto;
+      display: none;
+      background-color: var(--navbar-background-colour);
+      align-items: left;
+    }
+
+    #navbar-hidden{
+      display: inline;
+    }
+
+    #navbar-right ul {
+      width: 20vw;
+      margin: auto auto auto auto;
+      text-align: left;
+    }
+
   }

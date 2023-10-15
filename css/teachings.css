@@ -1,23 +1,23 @@
 .even_teachings {
     background-color: var(--div-white);
     height: auto;
-    padding: 0 0 2em 0;
+    padding: 0 0 2rem 0;
 }
 
 .odd_teachings {
     background-color: var(--div-grey);
     height: auto;
-    padding: 0 0 2em 0;
+    padding: 0 0 2rem 0;
 }
 
 .class_title{
     font-size: var(--medium-font);
     /* text-decoration: underline; */
     font-style: italic;
-    padding: 1em 0 0.5em 0;
+    padding: 1rem 0 0.5rem 0;
 }
 
 .class_description {
     font-size: var(--small-font);
-    padding: 0 0 0.5em 0;
+    padding: 0 0 0.5rem 0;
 }

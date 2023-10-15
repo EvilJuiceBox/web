@@ -2,12 +2,12 @@
     display: block;
     align-items: center;
     justify-content: center;
-    margin: 1em auto 0em auto;
-    width: 30%;
+    margin: 1rem auto 0rem auto;
+    width: 30vw;
 }
 
 .cheng img {
-    width:100%;
+    width:15vw;
 }
 
 .cheng_credit {
@@ -16,7 +16,7 @@
 
 .thanks {
     width: fit-content;
-    margin: 1em auto 1em auto;
+    margin: 1rem auto 1rem auto;
     font-size: var(--script-font);
 }
 
@@ -25,19 +25,19 @@
 }
 
 .flower {
-    width: 1.5em;
+    width: 1.5rem;
 }
 
 .collaborator {
-    width: 30%;
+    width: 30vw;
     font-size: var(--small-font);
 }
 
 .collaborator p {
-    padding: 0 0 0.5em 0;
+    padding: 0 0 0.5rem 0;
 }
 
 .collaborator img {
-    max-width: 70%;
+    max-width: 15vw;
     
 }

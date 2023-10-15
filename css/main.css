@@ -24,9 +24,10 @@
     --navbar-height: 5vh;
     --navbar-button-size: calc(var(--navbar-height)/2.5);
 
+    --content-height: 10vh;
     --footer-height: 3vh;
 
-    --document-padding: 2em;
+    --document-padding: 2rem;
 
     /* Main page content */
     --div-grey: #f5f5f5;
@@ -37,7 +38,16 @@
 }
 
 footer {
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5rem 0 0.5rem 0;
     height: var(--footer-height);
     font-size: var(--small-font);
+}
+
+@media screen and (max-width: 650px) {
+:root {
+    --large-font: calc(20px + 0.25vw);
+    --medium-font: calc(16px + 0.25vw);
+    --small-font: calc(12px + 0.25vw);
+    --script-font: calc(10px + 0.25vw);
+}
 }
