@@ -27,3 +27,17 @@
 .flower {
     width: 1.5em;
 }
+
+.collaborator {
+    width: 30%;
+    font-size: var(--small-font);
+}
+
+.collaborator p {
+    padding: 0 0 0.5em 0;
+}
+
+.collaborator img {
+    max-width: 70%;
+    
+}
