@@ -14,4 +14,20 @@ function scrollFunction() {
     // document.getElementById("navbar-right").style.display = "flex";
   }
   document.getElementById("navbar_right").style.display = "";
+
+
+  // window.screen.height;
+  // window.screen.width;
+  if (window.screen.width < 1000)  {
+    console.log("testing")
+    let x = document.getElementById("navbar_right");
+    let header = document.getElementById("header");
+    let navbar = document.getElementById("navbar");
+  
+    x.style.display = "none";
+    header.style.height = "20vh";
+    navbar.style.height = "5vh";
+  }
+
+
 }

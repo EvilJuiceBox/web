@@ -4,10 +4,6 @@
 
 
 function rotateRandomText(text_object, random_text) {
-    // let random_message = document.getElementById("random");
-    // random_message.textContent = random_text[Math.random()];
-    // $('random_quote').innerHTML = 'Your text.';
-    console.log("hello");
     text_object.innerText = "Random: " + random_text[Math.floor(Math.random()*random_text.length)];
     // setTimeout("rotateRandomText()", 1000);
 }

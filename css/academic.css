@@ -31,7 +31,7 @@
 .award {
     display: inline-flex;
     width: 75vw;
-    padding: 0.5rem 5rem 1rem 5rem;
+    padding: 0.5rem 0rem 1rem 0rem;
 }
 
 .award_img {
@@ -43,6 +43,7 @@
     width: 50vw;
     font-size: var(--small-font);
     margin: auto;
+    padding: 0 1vw 0 1vw;
     text-align: center;
 }
 
@@ -51,4 +52,13 @@
     /* margin: auto; */
     margin: auto 3rem auto 0;
     width: 10vw;
+}
+
+@media (max-width: 1000px){
+    .award {
+        display: inline-flex;
+        width: 100vw;
+        padding: 0.5rem 0rem 1rem 0rem;
+    }
+
 }
