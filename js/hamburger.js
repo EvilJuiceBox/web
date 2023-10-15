@@ -1,5 +1,5 @@
 function toggleHamburger() {
-    let x = document.getElementById("navbar-right");
+    let x = document.getElementById("navbar_right");
     let header = document.getElementById("header");
     let navbar = document.getElementById("navbar");
     console.log("toggling")
