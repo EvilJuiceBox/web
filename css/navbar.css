@@ -32,7 +32,7 @@
   text-decoration: underline;
 }
 
-#navbar{
+#navbar {
     transition: 0.4s;
     overflow: hidden;
     margin: auto;
@@ -52,7 +52,7 @@
     color: black;
 }
 
-#navbar-left {
+#navbar_left {
   width: auto;
   height: 100vw;
   margin-left: var(--document-padding);
@@ -63,7 +63,7 @@
 }
 
 
-#navbar-right {
+#navbar_right {
     width: fit-content;
     /* height: 100vw; */
     margin-left: auto;
@@ -99,7 +99,7 @@
       text-align: left;
     }
 
-    #navbar-left {
+    #navbar_left {
       width: 75vw;
     }
 
@@ -118,9 +118,7 @@
       max-height: 6vw; 
     }
 
-
-    
-    #navbar-right {
+    #navbar_right {
       /* float: none; */
       overflow-y: hidden;
       overflow: hidden;
@@ -131,14 +129,13 @@
       align-items: left;
     }
 
-    #navbar-hidden{
+    #navbar_hidden{
       display: inline;
     }
 
-    #navbar-right ul {
+    #navbar_right ul {
       width: 20vw;
       margin: auto auto auto auto;
       text-align: left;
     }
-
   }
