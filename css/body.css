@@ -45,11 +45,24 @@ main {
 }
 
 
-#random {
-    margin: 0 20vw 2rem 20vw;
+.random_show {
+    margin: 2rem 20vw 2rem 20vw;
     font-size: var(--small-font);
     text-align: center;
     width:60%;
+
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.random_fade {
+    margin: 2rem 20vw 2rem 20vw;
+    font-size: var(--small-font);
+    text-align: center;
+    width:60%;
+
+    opacity: 0;
+    transition: all 1s ease;
 }
 
 .grey {
