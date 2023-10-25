@@ -1,11 +1,13 @@
 .even {
-    background-color: var(--div-white);
+    background-color: var(--div-grey);
+    /* background-color: var(--div-white); */
     height: auto;
     padding: 0 0 2rem 0;
 }
 
 .odd {
-    background-color: var(--div-grey);
+    /* background-color: var(--div-grey); */
+    background-color: var(--div-white);
     height: auto;
     padding: 0 0 2rem 0;
 }

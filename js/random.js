@@ -44,7 +44,8 @@ $(function() { // shorthand for `$(document).ready(function() {
         "My favourite pizza toppings are bacon and mushrooms.",
         "Fall is my favourite season.",
         "Pachelbel's Canon in D is my favourite classical piece.",
-        "I had a pet turtle growing up"
+        "I had a pet turtle growing up",
+        "I belong to the Ravenclaw house."
         ];
     initRandomText(text_object, random_text);
     setInterval(rotateRandomText, 6000, text_object, random_text);
