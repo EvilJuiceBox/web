@@ -54,6 +54,13 @@
     width: 10vw;
 }
 
+.courses {
+    width: fit-content;
+    margin: 1rem auto 1rem auto;
+    font-size: var(--script-font);
+    text-align: left;
+}
+
 @media (max-width: 1000px){
     .award {
         display: inline-flex;

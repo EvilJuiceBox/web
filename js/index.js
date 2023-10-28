@@ -4,14 +4,17 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
 // ORDER OF OPERATION MATTERS
   // First close the menu bar if open
-  if (document.getElementById("ham_toggled").checked)
-  {
-    document.getElementById("ham_toggled").checked = false;
-    document.getElementById("navbar_right").style.display = "none";
-    document.getElementById("header").style.height = "20vh";
-    document.getElementById("navbar").style.height = "5vh";
-  }
 
+  ham_toggled = document.getElementById("ham_toggled")
+  if (typeof(ham_toggled) != 'undefined' && ham_toggled != null) {
+    if (document.getElementById("ham_toggled").checked)
+    {
+      document.getElementById("ham_toggled").checked = false;
+      document.getElementById("navbar_right").style.display = "none";
+      document.getElementById("header").style.height = "20vh";
+      document.getElementById("navbar").style.height = "5vh";
+    }
+  }
 
   // make header smaller
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {

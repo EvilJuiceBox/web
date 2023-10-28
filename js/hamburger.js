@@ -3,29 +3,21 @@ function toggleHamburger() {
     let header = document.getElementById("header");
     let navbar = document.getElementById("navbar");
 
-    if (document.getElementById("ham_toggled").checked) {
-        // hide the menu
-        x.style.display = "none";
-        header.style.height = "20vh";
-        navbar.style.height = "5vh";
-      } else {
-        // show the menu
-        x.style.display = "flex";
-        header.style.height = "40vh";
-        navbar.style.height = "23vh";
+    let ham_toggled = document.getElementById("ham_toggled")
+    if (typeof(ham_toggled) != 'undefined' && ham_toggled != null) {
+      if (ham_toggled.checked) {
+          // hide the menu
+          x.style.display = "none";
+          header.style.height = "20vh";
+          navbar.style.height = "5vh";
+        } else {
+          // show the menu
+          x.style.display = "flex";
+          header.style.height = "40vh";
+          navbar.style.height = "23vh";
+        }
       }
-    // if (x.style.display === "flex") {
-    //   x.style.display = "none";
-    //   header.style.height = "20vh";
-    //   navbar.style.height = "5vh";
-    // } else {
-    //   x.style.display = "flex";
-    //   header.style.height = "40vh";
-    //   navbar.style.height = "23vh";
-    // }
   }
-
-// addEventListener("scroll", resetHamburger);
 
 
 function resetHamburger() {
