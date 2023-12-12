@@ -154,6 +154,11 @@ main {
     margin: 0 auto 0 auto;
 }
 
+.divider {
+    border-top: 4px solid var(--persian-indigo);;
+    /* border-radius: 5px; */
+}
+
 
 @media (max-width: 1000px){
 
