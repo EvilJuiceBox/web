@@ -8,7 +8,7 @@ $(function () {
     // Scroll to function 
     function scrollTo(ele) {
         $("html, body").animate({
-            scrollTop: $(ele).offset().top - $("#header").outerHeight()
+            scrollTop: $(ele).offset().top - $("#header").height()
         });
     }
 
