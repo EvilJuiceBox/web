@@ -164,7 +164,8 @@
     }
 
     #hamburger_menu img{
-      max-height: calc(2.5vw + 2.5vh); 
+      /* max-height: calc(2.5vw + 2.5vh);  */
+      height: 4vh;
     }
 
     #navbar_right {
