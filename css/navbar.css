@@ -154,7 +154,7 @@
 
     #hamburger_menu {
       display: inline;
-      margin-right: 10vw;
+      margin: auto 10vw auto 0vw;
       /* max-height: 8vw;  */
     }
 
