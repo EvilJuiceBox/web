@@ -1,5 +1,8 @@
 http-server -c-l
 python3 -m http.server
+
+
+python -m http.server
 may need to visit http://[::1]:8000/ to see webpage.
 
 obtained from https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server
