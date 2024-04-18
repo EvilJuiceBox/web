@@ -39,13 +39,32 @@
         </div>
       </div> -->
 
+      <!-- JanusRL -->
+      <div class="odd">
+        <div class="paper_title">A Model-Based Approach for Realizing Multi-Agent Traffic Simulations to Explore Human-Based Uncertainty</div>
+        <div class="paper_descriptions">Co-authors: Sol Zilberman and Betty H.C. Cheng </div>
+        <div class="publisher_info">In Press for MODELS2024</div>
+        <!-- <div class="download_pdf"><a href="./publications/">PDF</a></div> -->
+        <div class="container">
+          <div class="project_subimage2"><p>MODA-based diagram for JanusRL</p><img src="./images/projects/janusrl/moda.png" alt="MODA-based diagram for JanusRL"></div>
+          <div class="project_subimage"><p>Agent refinement using i* and KAOS</p><img src="./images/projects/janusrl/refinement.png" alt="Agent refinement using i* and KAOS"></div>
+          
+        </div>
+        <div class="description">
+            <p>Existing research has demonstrated that human-based uncertainty can be simulated and used to discover previously unseen maneuvers using non-cooperative game theory and reinforcement learning. 
+            This work introduces an agent-based MODA goal modeling framework to provide a systematic process to discover unexpected behaviors or undesirable interactions and enable the robustification of the AV under study. Our premise is that existing approaches uses an ad hoc approach to define the reward function. We propose the use of the i* (istar) model to capture high level societal interactions between the different types of agents in an environment. Next, the non-functional objectives (i.e., aggressive driving) of each agent are further refined into functional objectives using the KAOS goal modeling language.
+            Different use cases were provided to demonstrate that our approach can systematically refine high-level human driving styles into functional and non-functional goals. RL can then be used to operationalize the information, discovering failures in AVs and improving the robustness of the AV.
+            We showed that a model-based approach enables reusability and extendability through multi-agent simulation, a direction previously not explored.</p>
+        </div>
+      </div>
+
       <!-- SafeDriveRL -->
       <div class="even">
         <div class="paper_title">SafeDriveRL: Combining Non-cooperative Game Theory with Reinforcement Learning to Explore and Mitigate Uncertainty for Autonomous Vehicles</div>
         <div class="paper_descriptions">Co-authors: Sol Zilberman, Nick Polanco, Joshua E. Siegel, and Betty H.C. Cheng</div>
         <div class="publisher_info">Publisher: International Conference on Software Engineering for Adaptive and Self-Managing Systems 2024 (SEAMS)</div>
         <div class="publisher_info">Lisbon, Portugal</div>
-        <div class="download_pdf"><p>Accepted to SEAMS2024, coming soon!</p></div>
+        <div class="download_pdf"><p>Presented at SEAMS2024, coming soon!</p></div>
         <div class="container">
           <div class="project_subimage2"><p>Data Flow Diagram</p><img src="./images/projects/safedriverl/dfd-methodology-final.png" alt="DFD for safedriverl"></div>
           <div class="project_subimage"><p>Example of Behaviours Discovered</p><img src="./images/projects/safedriverl/demo.jpg" alt="example of behaviours discovered by SafeDriveRL"></div>
@@ -103,8 +122,8 @@
         <div class="download_pdf"><a href="https://link.springer.com/article/10.1007/s10270-023-01090-9" target="_blank">Journal Publication</a></div>
         <!-- <div class="download_pdf"><a href="./publications/langford2021modalas.pdf" target="_blank">Conference Proceeding</a> <a href="./publications/langford2023modalas.pdf" target="_blank">Journal Publication</a></div> -->
         <div class="container_align">
-          <div class="project_subimage2"><p>Data Flow Diagram</p><img src="./images/projects/modalas/modalas_dfd.jpg" alt="DFD for modalas"></div>
-          <div class="project_subimage"><p>Enlil Simulated Conditions</p><img src="./images/projects/modalas/enlil_generated.jpg" alt="example output of enlil's simulated environmental effects."></div>
+          <div class="project_subimage2"><p>Data Flow Diagram</p><img src="./images/projects/modalas/modalas_dfd.png" alt="DFD for modalas"></div>
+          <div class="project_subimage"><p>Enlil Simulated Conditions</p><img src="./images/projects/modalas/enlil_generated.png" alt="example output of enlil's simulated environmental effects."></div>
         </div>
         <div class="description">
             <p>As Learning-Enabled Components (LECs) are increasingly used in safety-critical systems as key decision making processes, the assurance of their correctness is paramount. However, when training environment fails to fully capture real-world phenomena, the behaviour of the LECs is potentially uncertain, and thus cannot be assured as safe. MoDALAS introduces a model-driven approach to manage the self-adaptation of Learning-Enabled Systems (LES) to account for run-time contexts for which the LEC cannot be trusted. Our framework enables a behaviour oracle to monitor and evaluate goal models at run time to determine whether or not the LECs can meet functional objectives, and enable adaptation should it be deemed untrustworthy.</p>
