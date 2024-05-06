@@ -45,7 +45,9 @@ $(function() { // shorthand for `$(document).ready(function() {
         "Fall is my favourite season.",
         "Pachelbel's Canon in D is my favourite classical piece.",
         "I had a pet turtle growing up",
-        "I belong to the Ravenclaw house."
+        "I belong to the Ravenclaw house.",
+        "My favourite number is 20.",
+        "42 is the ultimate question of life, the universe, and everything."
         ];
     initRandomText(text_object, random_text);
     setInterval(rotateRandomText, 6000, text_object, random_text);
