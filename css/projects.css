@@ -1,13 +1,13 @@
 .even {
-    background-color: var(--div-grey);
-    /* background-color: var(--div-white); */
+    /* background-color: var(--div-grey); */
+    background-color: var(--div-white);
     height: auto;
     padding: 0 0 2rem 0;
 }
 
 .odd {
-    /* background-color: var(--div-grey); */
-    background-color: var(--div-white);
+    background-color: var(--div-grey);
+    /* background-color: var(--div-white); */
     height: auto;
     padding: 0 0 2rem 0;
 }
@@ -28,6 +28,7 @@
 .project_subimage {
     width: 25vw;
     max-width: 25vw;
+    margin: auto 0;
     font-size: var(--small-font);
 }
 
