@@ -42,10 +42,11 @@ $(function() { // shorthand for `$(document).ready(function() {
         "Caramel is my favourite coffee flavour.",
         "I work with the High Performance Computing Center (HPCC) at MSU.",
         "My favourite pizza toppings are bacon and mushrooms.",
-        "Fall is my favourite season.",
+        "Autumn is my favourite season.",
         "Pachelbel's Canon in D is my favourite classical piece.",
-        "I had a pet turtle growing up",
-        "I belong to the Ravenclaw house."
+        "I had a pet turtle growing up.",
+        "I belong to the Ravenclaw house.",
+        "Probably out coffee hunting."
         ];
     initRandomText(text_object, random_text);
     setInterval(rotateRandomText, 6000, text_object, random_text);
