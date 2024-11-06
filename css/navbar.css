@@ -62,6 +62,12 @@
   align-items:center;
 }
 
+#dropbtn {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
 
 #navbar_right {
     width: fit-content;
