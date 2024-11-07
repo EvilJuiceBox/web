@@ -2,7 +2,7 @@
 
 $(function() { // shorthand for `$(document).ready(function() {
     // $("#header").load("./navbar.html");
-    $("#navbar").load("../shared/navbar.html");
+    $("#navbar").load("./navbar.html");
 });
 
 // $(function () {
