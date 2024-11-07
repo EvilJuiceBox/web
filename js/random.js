@@ -48,7 +48,12 @@ $(function() { // shorthand for `$(document).ready(function() {
         "I belong to the Ravenclaw house.",
         "Probably out coffee hunting.",
         "My favourite number is 20.",
-        "42 is the ultimate question of life, the universe, and everything."
+        "42 is the ultimate question of life, the universe, and everything.",
+        "Photograph Ed Sheeran is my favourite song.",
+        "Tom Scholz (Boston band) is an electrical engineer who revolutionised the guitar amplifier to prevent blow out.",
+        "I built this website from scratch in a week!",
+        "The letter 'q' does not appear in any states names.",
+        "The only letter that doesn't appear on the periodic table is J."
         ];
     initRandomText(text_object, random_text);
     setInterval(rotateRandomText, 6000, text_object, random_text);
