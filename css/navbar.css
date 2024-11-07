@@ -207,7 +207,8 @@
       display: inline-block;
       min-width: 110px;
       margin: 0 0 0 0;
-  }
+      padding: 1px 0px;
+    }
   
   #navbar li:not(:last-child) {
     border-radius: 4px;
