@@ -14,7 +14,7 @@
   </head>
   <body>
     <header id="header">
-        
+      <div id="navbar"></div>
     </header>
     <main id="main">
       <div class="title">MY PROJECTS</div>
@@ -101,7 +101,7 @@
         <div class="publisher_info">Singapore</div>
         <div class="download_pdf"><a href="https://link.springer.com/chapter/10.1007/978-3-031-21251-2_6" target="_blank">Conference Proceeding</a></div>
         <div class="publisher_info">Journal Publisher: Automated SE Journal (ASE) - Special Issue on Advances in Search-based Software Engineering</div>
-        <div class="download_pdf">Accepted September 2024, Coming Soon!</div>
+        <div class="download_pdf"><a href="https://link.springer.com/article/10.1007/s10515-024-00470-9" target="_blank">Journal Publication</a></div>
         <div class="container">
           <div class="project_subimage2"><p>Adversarial Example Generated Against a Waymo Image</p><img src="./images/projects/evoattack/waymo_adversarial_example.jpg" alt=""></div>
           <!-- <div class="project_subimage"><p></p><img src="./images/projects/" alt=""></div>
@@ -156,7 +156,7 @@
     <footer id="footer"></footer>
 	
     <script src="./js/index.js" defer></script>
-    <script src="./js/navbar.js" defer></script>
+    <script>$("#navbar").load("shared/navbar.html");</script>
     <script src="./js/hamburger.js" defer></script>
     <script src="./js/copyright.js" defer></script>
   </body>

@@ -62,12 +62,6 @@
   align-items:center;
 }
 
-#dropbtn {
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  color: black;
-}
 
 #navbar_right {
     width: fit-content;
@@ -148,6 +142,14 @@
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 1000px) {
+    /* Turns off the links on header when in phone mode */
+    .dropdown-primary {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+      color: black;
+    }
+
     #navbar a {
       float: none;
       display: block;
