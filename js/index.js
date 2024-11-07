@@ -29,6 +29,4 @@ function scrollFunction() {
     // document.getElementById("navbar-right").style.display = "flex";
   }
   document.getElementById("navbar_right").style.display = "";
-
-  
 }

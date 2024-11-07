@@ -53,7 +53,9 @@ $(function() { // shorthand for `$(document).ready(function() {
         "Tom Scholz (Boston band) is an electrical engineer who revolutionised the guitar amplifier to prevent blow out.",
         "I built this website from scratch in a week!",
         "The letter 'q' does not appear in any state names.",
-        "The only letter that doesn't appear on the periodic table is J."
+        "The only letter that doesn't appear on the periodic table is J.",
+        "Supernatural is my favourite show.",
+        "The mentalist is my favourite cop-drama show."
         ];
     initRandomText(text_object, random_text);
     setInterval(rotateRandomText, 6000, text_object, random_text);
