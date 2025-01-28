@@ -24,6 +24,12 @@
     width: 10vw;
 }
 
+.underlinetitle{
+    font-size: var(--medium-font);
+    padding: 1rem 0 0.5rem 0;
+    text-decoration: underline;
+}
+
 
 @media (max-width: 1000px){
     .resource {
