@@ -30,6 +30,35 @@
     text-decoration: underline;
 }
 
+.collapsible {
+    /* font-size: var(--medium-font); */
+    background-color: inherit;
+    font-size: var(--medium-font);
+    padding: 1rem 0 1rem 0;
+    text-decoration: underline;
+    /* color: #444; */
+    cursor: pointer;
+    /* padding: 18px; */
+    width: 75vw;
+    border: none;
+    text-align: center;
+    outline: none;
+  }
+
+.topic {
+    max-height: 0;
+    /* display: inline-flex; */
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible:after {
+    content: '[Show]\02795'; /* Unicode character for "plus" sign (+) */
+}
+  
+.active:after {
+    content: "[Hide]\2796"; /* Unicode character for "minus" sign (-) */
+}
 
 @media (max-width: 1000px){
     .resource {
