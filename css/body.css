@@ -168,5 +168,8 @@ main {
         min-height: var(--content-height);
     }
 
+    #kira {
+        width: 35%;
+    }
 
 }

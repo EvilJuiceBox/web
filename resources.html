@@ -10,103 +10,160 @@
   </head>
   <body>
     <header id="header">
-        
+        <div id="navbar"></div>
     </header>
     <main id="main">
-
         <div class="title">RESOURCES FOR STUDENTS</div>
 
         <div class="white">
-            <div class="subtitle">Neural Network Resources</div>
-            <div class="resource">
-                <img src="./documents/lectures/lectureslides2024.jpg" class="resource_img" alt="lecture thumbnail">
-                <div class="resource_name"><p>[Lecture Slides] Kira's Introduction to Deep Learning 2024</p></div>
-                <p class="resource_link"><a href="./documents/lectures/Machine learning FS2024.pdf" target="_blank">Link</a></p>
-            </div>
+            <button type="button" class="collapsible" id="dnn">Neural Network Resources <br></button>
+            <!-- <div class="underlinetitle">Neural Network Resources</div> -->
 
-            <!-- Neural Network and Deep Learning -->
-            <div class="resource">
-                <img src="./images/resources/nn_and_dl_nielsen.jpg" class="resource_img" alt="Interactive Example from the book Neural Networks and Deep Learning Chapter 4">
-                <div class="resource_name"><p>[Book] Neural Network and Deep Learning - Free Online Book by Michael Nielsen</p></div>
-                <p class="resource_link"><a href="http://neuralnetworksanddeeplearning.com/" target="_blank">Link</a></p>
-            </div>
+            <div class="topic">
+                <div class="resource">
+                    <img src="./documents/lectures/lectureslides2024.jpg" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Kira's Introduction to Deep Learning 2024</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/Machine learning FS2024.pdf" target="_blank">Link</a></p>
+                </div>
 
-            <!-- Deep Learning -->
-            <div class="resource">
-                <img src="./images/resources/goodfellow.jpg" class="resource_img" alt="Goodfellow's deep learning book">
-                <div class="resource_name"><p>[Book] Deep Learning - Ian Goodfellow et al.</p></div>
-                <p class="resource_link"><a href="https://www.deeplearningbook.org/" target="_blank">Link</a></p>
-            </div>
 
-            <!-- Pytorch -->
-            <div class="resource">
-                <img src="./images/resources/pytorch.jpg" class="resource_img" alt="pytorch logo">
-                <div class="resource_name"><p>[Python] Getting Started with Pytorch</p></div>
-                <p class="resource_link"><a href="https://pytorch.org/get-started/locally/" target="_blank">Link</a></p>
-            </div>
+                <!-- Neural Network and Deep Learning -->
+                <div class="resource">
+                    <img src="./images/resources/nn_and_dl_nielsen.jpg" class="resource_img" alt="Interactive Example from the book Neural Networks and Deep Learning Chapter 4">
+                    <div class="resource_name"><p>[Book] Neural Network and Deep Learning - Free Online Book by Michael Nielsen</p></div>
+                    <p class="resource_link"><a href="http://neuralnetworksanddeeplearning.com/" target="_blank">Link</a></p>
+                </div>
 
-            <!-- 3b1b -->
-            <div class="resource">
-                <img src="./images/resources/3b1b.jpg" class="resource_img" alt="3 Blue 1 Brown Logo">
-                <div class="resource_name"><p>[Video Series] 3 Blue 1 Brown's Neural Network Series</p></div>
-                <p class="resource_link"><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank">Link</a></p>
-            </div>
+                <!-- Deep Learning -->
+                <div class="resource">
+                    <img src="./images/resources/goodfellow.jpg" class="resource_img" alt="Goodfellow's deep learning book">
+                    <div class="resource_name"><p>[Book] Deep Learning - Ian Goodfellow et al.</p></div>
+                    <p class="resource_link"><a href="https://www.deeplearningbook.org/" target="_blank">Link</a></p>
+                </div>
 
-            <!-- StatQuest -->
-            <div class="resource">
-                <img src="./images/resources/statquest.jpg" class="resource_img" alt="statquest">
-                <div class="resource_name"><p>[Video Series] StatQuest!</p></div>
-                <p class="resource_link"><a href="https://statquest.org/video-index/" target="_blank">Link</a></p>
-            </div>
+                <!-- Pytorch -->
+                <div class="resource">
+                    <img src="./images/resources/pytorch.jpg" class="resource_img" alt="pytorch logo">
+                    <div class="resource_name"><p>[Python] Getting Started with Pytorch</p></div>
+                    <p class="resource_link"><a href="https://pytorch.org/get-started/locally/" target="_blank">Link</a></p>
+                </div>
 
-            <!-- Tensorflow projector -->
-            <div class="resource">
-                <img src="./images/resources/tensorflowprojector.jpg" class="resource_img" alt="tensorflow example">
-                <div class="resource_name"><p>[Demo] Tensorflow's Embedding Projector (Visualiser)</p></div>
-                <p class="resource_link"><a href="https://projector.tensorflow.org/" target="_blank">Link</a></p>
-            </div>
+                <!-- 3b1b -->
+                <div class="resource">
+                    <img src="./images/resources/3b1b.jpg" class="resource_img" alt="3 Blue 1 Brown Logo">
+                    <div class="resource_name"><p>[Video Series] 3 Blue 1 Brown's Neural Network Series</p></div>
+                    <p class="resource_link"><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank">Link</a></p>
+                </div>
 
-            <!-- IBM's CNN article -->
-            <div class="resource">
-                <img src="./images/resources/cnn_ibm.jpg" class="resource_img" alt="ibm's bike feature example">
-                <div class="resource_name"><p>[Article] IBM's explanation on CNNs</p></div>
-                <p class="resource_link"><a href="https://www.ibm.com/topics/convolutional-neural-networks" target="_blank">Link</a></p>
-            </div>
+                <!-- StatQuest -->
+                <div class="resource">
+                    <img src="./images/resources/statquest.jpg" class="resource_img" alt="statquest">
+                    <div class="resource_name"><p>[Video Series] StatQuest!</p></div>
+                    <p class="resource_link"><a href="https://statquest.org/video-index/" target="_blank">Link</a></p>
+                </div>
 
-            <!-- Adam Harley's CNN visualiser -->
-            <div class="resource">
-                <img src="./images/resources/cnn_visualiser.jpg" class="resource_img" alt="Adam harley's visualiser">
-                <div class="resource_name"><p>[Demo] Adam Harley's CNN Demo</p></div>
-                <p class="resource_link"><a href="https://adamharley.com/nn_vis/cnn/3d.html" target="_blank">Link</a></p>
-            </div>
+                <!-- Tensorflow projector -->
+                <div class="resource">
+                    <img src="./images/resources/tensorflowprojector.jpg" class="resource_img" alt="tensorflow example">
+                    <div class="resource_name"><p>[Demo] Tensorflow's Embedding Projector (Visualiser)</p></div>
+                    <p class="resource_link"><a href="https://projector.tensorflow.org/" target="_blank">Link</a></p>
+                </div>
 
-            <!-- CNN Explainer -->
-            <div class="resource">
-                <img src="./images/resources/cnn_explainer.jpg" class="resource_img" alt="cnn explainer">
-                <div class="resource_name"><p>[Article] CNN explainer</p></div>
-                <p class="resource_link"><a href="https://poloclub.github.io/cnn-explainer/" target="_blank">Link</a></p>
-            </div>
+                <!-- IBM's CNN article -->
+                <div class="resource">
+                    <img src="./images/resources/cnn_ibm.jpg" class="resource_img" alt="ibm's bike feature example">
+                    <div class="resource_name"><p>[Article] IBM's explanation on CNNs</p></div>
+                    <p class="resource_link"><a href="https://www.ibm.com/topics/convolutional-neural-networks" target="_blank">Link</a></p>
+                </div>
 
-            <!-- SVM -->
-            <div class="resource">
-                <img src="./images/resources/svm.jpg" class="resource_img" alt="svm">
-                <div class="resource_name"><p>[Video] Support Vector Machine (SVM)</p></div>
-                <p class="resource_link"><a href="https://www.youtube.com/watch?v=_YPScrckx28" target="_blank">Link</a></p>
-            </div>
+                <!-- Adam Harley's CNN visualiser -->
+                <div class="resource">
+                    <img src="./images/resources/cnn_visualiser.jpg" class="resource_img" alt="Adam harley's visualiser">
+                    <div class="resource_name"><p>[Demo] Adam Harley's CNN Demo</p></div>
+                    <p class="resource_link"><a href="https://adamharley.com/nn_vis/cnn/3d.html" target="_blank">Link</a></p>
+                </div>
 
-            <!-- Word Embedding Demo -->
-            <div class="resource">
-                <img src="./images/resources/word_embedding_projector.jpg" class="resource_img" alt="word embedding projector">
-                <div class="resource_name"><p>[Demo] Word Embedding Projector</p></div>
-                <p class="resource_link"><a href="https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/" target="_blank">Link</a></p>
+                <!-- CNN Explainer -->
+                <div class="resource">
+                    <img src="./images/resources/cnn_explainer.jpg" class="resource_img" alt="cnn explainer">
+                    <div class="resource_name"><p>[Article] CNN explainer</p></div>
+                    <p class="resource_link"><a href="https://poloclub.github.io/cnn-explainer/" target="_blank">Link</a></p>
+                </div>
+
+                <!-- SVM -->
+                <div class="resource">
+                    <img src="./images/resources/svm.jpg" class="resource_img" alt="svm">
+                    <div class="resource_name"><p>[Video] Support Vector Machine (SVM)</p></div>
+                    <p class="resource_link"><a href="https://www.youtube.com/watch?v=_YPScrckx28" target="_blank">Link</a></p>
+                </div>
+
+                <!-- Word Embedding Demo -->
+                <div class="resource">
+                    <img src="./images/resources/word_embedding_projector.jpg" class="resource_img" alt="word embedding projector">
+                    <div class="resource_name"><p>[Demo] Word Embedding Projector</p></div>
+                    <p class="resource_link"><a href="https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/" target="_blank">Link</a></p>
+                </div>
             </div>
+        </div>
+
+
+        <div class="grey">
+            <a id="git"></a>
+            <button type="button" class="collapsible">Git Resources <br></button>
+            <!-- <div class="underlinetitle">Git Resources</div> -->
+            <div class="topic">
+                <div class="resource">
+                    <img src="./documents/lectures/gitlecture2025.jpg" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Kira's Introduction to Git 2025</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/Git Introduction.pdf" target="_blank">Link</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="white">
+            <a id="minilectures"></a>
+            <button type="button" class="collapsible">Mini Lecture Series<br></button>
+            <!-- <div class="underlinetitle">Git Resources</div> -->
+            <!-- Compiler Branch-level Optimisation -->
+            <div class="topic">
+                <div class="resource">
+                    <img src="./documents/lectures/minilecture_series/thumbmails/branch_prediction.png" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Compiler-level Optimisation Branch Prediction 01/15/2025</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/minilecture_series/branch_prediction.pdf" target="_blank">Link</a></p>
+                </div>
+
+                <!-- Black-box -->
+                <div class="resource">
+                    <img src="./documents/lectures/minilecture_series/thumbmails/blackbox.png" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Black-box 01/27/2025</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/minilecture_series/blackbox.pdf" target="_blank">Link</a></p>
+                </div>
+
+                <!-- nonconventional_testing_techniques -->
+                <div class="resource">
+                    <img src="./documents/lectures/minilecture_series/thumbmails/nonconventional_testing_techniques.png" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Non-conventional Testing Techniques 02/03/2025</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/minilecture_series/nonconventional_testing_techniques.pdf" target="_blank">Link</a></p>
+                </div>
+
+                <!-- tdd -->
+                <div class="resource">
+                    <img src="./documents/lectures/minilecture_series/thumbmails/tdd.png" class="resource_img" alt="lecture thumbnail">
+                    <div class="resource_name"><p>[Lecture Slides] Testing Driven Development 02/05/2025</p></div>
+                    <p class="resource_link"><a href="./documents/lectures/minilecture_series/tdd.pdf" target="_blank">Link</a></p>
+                </div>
+
+
+            </div>
+        </div>
 
 
     </main>
     <footer id="footer"></footer>
 	<script src="./js/index.js" defer></script>
-    <script src="./js/navbar.js" defer></script>
+    <script src="./js/navbar.js"></script>
     <script src="./js/hamburger.js" defer></script>
     <script src="./js/copyright.js" defer></script>
+    <script src="./js/collapse.js" defer></script>
   </body>
 </html>
