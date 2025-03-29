@@ -21,8 +21,25 @@
     }
 }
 .theme-light {
-    background: #f4f4f4;
-    color: #333333;
+    --theme-background-color: #f4f4f4;
+    --theme-button-color: #ededed;
+    --theme-button-active-color: #cbcbcb;
+    --theme-button-activated-color: #bababa;
+    --theme-button-hover-color: #dcdcdc;
+    --theme-foreground-color: #333333;
+    --theme-link-color: #0000ff;
+    --theme-link-hover-color: #ffaa00;
+    --theme-message-color: #000000;
+    --theme-message-gradient1-color: #00000066;
+    --theme-message-gradient2-color: #00000000;
+    --theme-pane-color: #f4f4f4;
+    --theme-text-color: #333333;
+    --theme-validation-text-color: #cccccc;
+    --theme-validation-background-color: #000000AA;
+    --theme-violation-color: #ff0000;
+    --theme-widget-color: #f4f4f4cc;
+    background: var(--theme-background-color);
+    color: var(--theme-foreground-color);
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 1rem;
 }
@@ -48,7 +65,7 @@
     cursor: pointer;
 }
 .theme-light a.link{
-    color: #0000ff;
+    color: var(--theme-link-color);
     cursor: pointer;
     font-size: 0.85rem;
     margin-bottom: 0rem;
@@ -63,7 +80,7 @@
             user-select: none;
 }
 .theme-light a.link:hover{
-    color: #ffaa00;
+    color: var(--theme-link-hover-color);
 }
 .theme-light div.left-container{
     left: 0rem;
@@ -96,17 +113,17 @@
     }
 }
 .theme-light div.message-container{
-    background: linear-gradient(to top, rgb(0,0,0,0.4), rgb(0,0,0,0.0));
+    background: linear-gradient(to top, var(--theme-message-gradient1-color), var(--theme-message-gradient2-color));
     height: 3rem;
     margin: 0rem 0.5rem;
     top: calc(100% - 3.5rem + 0.125rem);
 }
 .theme-light div.validation-container{
-    background: rgb(0,0,0,0.8);
+    background: var(--theme-validation-background-color);
     margin: 0rem 0.5rem;
 }
 .theme-light div.toggle-container{
-    background: #f4f4f4cc;
+    background: var(--theme-widget-color);
     left: calc(100% - 11rem);
     padding: 0.15rem 0.4rem 0.15rem 0.4rem;
     position: absolute;
@@ -121,7 +138,7 @@
     width: 21rem;
 }
 .theme-light div.message{
-    color: #000000;
+    color: var(--theme-message-color);
     padding: 1rem 0.5rem;
     max-width: 100%;
     text-align: center;
@@ -129,7 +146,7 @@
     word-wrap: break-word;
 }
 .theme-light div.validation{
-    color: #cccccc;
+    color: var(--theme-validation-text-color);
     height: 100%;
     padding: 0.5rem 0.5rem;
     max-width: 100%;
@@ -139,17 +156,18 @@
     word-wrap: break-word;
 }
 .theme-light fieldset{
-    background: #f4f4f4cc;
+    background: var(--theme-widget-color);
     border: 0.0625rem solid #888888;
     margin: 0rem 0rem 0.33rem 0rem;
     padding: 0.67rem;
     text-align: left;
+    text-shadow: 0.0625rem 0.0625rem 0.0625rem #000000;
 }
 .theme-light fieldset:hover{
     border: 0.0625rem solid #444444;
 }
 .theme-light fieldset legend{
-    background: #f4f4f4cc;
+    background: var(--theme-widget-color);
     border-left: 0.0625rem solid #888888;
     border-right: 0.0625rem solid #888888;
     border-top: 0.0625rem solid #888888;
@@ -159,7 +177,7 @@
 }
 @media only screen and (orientation: landscape) {
     .theme-light svg{
-        background: #f4f4f4;
+        background: var(--theme-pane-color);
         border: 0.0625rem solid #888888;
         cursor: grab;
         font-size: 0.85rem;
@@ -175,7 +193,7 @@
 }
 @media only screen and (orientation: portrait) {
     .theme-light svg{
-        background: #f4f4f4;
+        background: var(--theme-pane-color);
         border: 0.0625rem solid #888888;
         cursor: grab;
         font-size: 0.85rem;
@@ -196,9 +214,9 @@
 .theme-light input[type=text],
 .theme-light select,
 .theme-light textarea{
-    background: #f4f4f4;
+    background: var(--theme-background-color);
     border: 0.0625rem solid #dadada;
-    color: #333333;
+    color: var(--theme-text-color);
     font-family: "Courier New", Courier, monospace;
     font-size: 0.85rem;
     outline: none;
@@ -218,9 +236,9 @@
     border: 0.0625rem solid #00aaff;
 }
 .theme-light input[type=button]{
-    background: #ededed;
+    background: var(--theme-button-color);
     border: 0.0625rem solid #cccccc;
-    color: #333333;
+    color: var(--theme-foreground-color);
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 0.85rem;
     font-weight: bold;
@@ -235,18 +253,18 @@
             box-shadow: inset -0.0625rem -0.0625rem 0.1875rem #888888;
 }
 .theme-light input[type=button]:hover{
-    background: #dcdcdc;
+    background: var(--theme-button-hover-color);
     text-decoration: underline;
 }
 .theme-light input[type=button]:active{
-    background: #cbcbcb;
+    background: var(--theme-button-active-color);
     outline: none;
     -webkit-box-shadow: inset 0rem 0rem 0.3125rem #444444;
        -moz-box-shadow: inset 0rem 0rem 0.3125rem #444444;
             box-shadow: inset 0rem 0rem 0.3125rem #444444;
 }
 .theme-light input[type=button].activated{
-    background: #bababa;
+    background: var(--theme-button-activated-color);
     outline: none;
     -webkit-box-shadow: inset 0rem 0rem 0.3125rem #333333;
        -moz-box-shadow: inset 0rem 0rem 0.3125rem #333333;
@@ -277,7 +295,7 @@
             user-select: none;
 }
 .theme-light label.link{
-    color: #0000ff;
+    color: var(--theme-link-color);
     cursor: pointer;
     font-size: 0.75rem;
     margin-bottom: 0rem;
@@ -291,7 +309,7 @@
             user-select: none;
 }
 .theme-light label.link:hover{
-    color: #ff0000;
+    color: var(--theme-link-hover-color);
 }
 .theme-light label.left{
     float: left;
@@ -349,6 +367,6 @@
     padding: 0.2rem 0rem;
 }
 .theme-light li.violation{
-    color: #ff0000;
+    color: var(--theme-violation-color);
     text-shadow: 0.0625rem 0.0625rem 0.0625rem #000000;
 }

@@ -124,6 +124,7 @@ class KAOSOperatingElement extends KAOSElement {
         elem.setAttribute("visibility", (this.operatingDescription !== "") ? "visible" : "hidden");
         elem.setAttribute("x", pos.x);
         elem.setAttribute("y", pos.y);
+
         let tspans = this._createSVGElementDescriptionText(elem, this.operatingDescription);
         for (let i = 0; i < Math.min(this._maxRows, tspans.length); i++) {
             elem.appendChild(tspans[i]);
@@ -213,28 +214,6 @@ class KAOSOperatingElement extends KAOSElement {
         w += this._fontSize;
         let size = {"w": w, "h": h};
         return size;
-    }
-
-    /** _parseDescriptionFunction
-        Parse description into function.
-        :param text: text value
-        :return: matched function
-    **/
-    _parseDescriptionFunction(options, text) {
-        for (let i = 0; i < options.length; i++) {
-            let regexPatterns = options[i].regex;
-            for (let j = 0; j < regexPatterns.length; j++) {
-                let regexMatch = regexPatterns[j].exec(text);
-                if (regexMatch !== null) {
-                    let func = options[i].func.clone();
-                    for (let k = 1; k < regexMatch.length; k++) {
-                        func.setParameter(k, regexMatch[k]);
-                    }
-                    return func;
-                }
-            }
-        }
-        return null;
     }
 
     /** _setAttributes

@@ -9,8 +9,10 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>KAOSDraw</title>
-    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_light.css">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_dark.css">
+    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_light.css">
+    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_pink.css">
     <link rel="stylesheet" type="text/css" media="only print" href="css/kaosdraw_print.css">
     <script src="js/kaosdraw_kaos_entity.js"></script>
     <script src="js/kaosdraw_kaos_function.js"></script>
@@ -72,13 +74,11 @@
           <label>Model Name<br><input id="txt_model_identifier" type="text" title="Uniquely identifies the KAOS model."/></label>
           <div>
             <label>Open</label>
-            <label class="link">SVG<input id="dlg_file_opensvg" type="file" class="hidden" accept="image/svg+xml,text/plain,text/xml"/></label>
+            <label class="link">XML<input id="dlg_file_openxml" type="file" class="hidden" accept="text/xml"/></label>
             <label>Save</label>
-            <label id="lnk_file_savesvg" class="link">SVG</label>
+            <label id="lnk_file_savexml" class="link">XML</label>
             <label>Export</label>
             <label id="lnk_file_savejpeg" class="link">JPEG</label>
-            <!--<label id="lnk_file_savekaos" class="link">KAOS</label>-->
-            <label id="lnk_file_savelogic" class="link">Logic</label>
             <label id="lnk_model_validate" class="link right">Validate</label>
           </div>
         </fieldset>
@@ -103,6 +103,9 @@
           </div>
           <div id="grp_item_description" class="hidden">
             <label>Description<br><textarea id="txt_item_description" title="Descriptive text for the element."></textarea></label><br>
+          </div>
+          <div id="grp_item_topic" class="hidden">
+            <label>Topic<br><input id="txt_item_topic" type="text"/></label><br>
           </div>
           <div id="grp_item_operatingcondition" class="hidden">
             <label>Operating Condition<br><select id="sel_item_operatingcondition"></select></label><br>

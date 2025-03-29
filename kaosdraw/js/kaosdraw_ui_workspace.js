@@ -138,11 +138,11 @@ class UIWorkspace {
         this._container.dispatchEvent(evt);
     }
 
-    /** loadFromSVGXML
+    /** loadSVGXML
         Loads a kaos model from the given SVG xml.
         :param text: text content of SVG xml.
     **/
-    loadFromSVGXML(text) {
+    loadSVGXML(text) {
         // parse svg file and verify that doc contains an svg element
         let parser = new DOMParser();
         let doc = parser.parseFromString(text, "image/svg+xml");
@@ -494,7 +494,7 @@ class UIWorkspace {
         // save current state to undo history
         let content = this.toSVGXML();
         let selection = (this._selectedItem !== null) ? this._selectedItem.reference : null;
-        let currState = {"svgxml": this.toSVGXML(), "selection": selection};
+        let currState = {"svg": this.toSVGXML(), "selection": selection};
         this._undoHistory.push(currState);
 
         // clear redo history
@@ -523,12 +523,12 @@ class UIWorkspace {
             // save current state to undo history
             let content = this.toSVGXML();
             let selection = (this._selectedItem !== null) ? this._selectedItem.reference : null;
-            let currState = {"svgxml": this.toSVGXML(), "selection": selection};
+            let currState = {"svg": this.toSVGXML(), "selection": selection};
             this._undoHistory.push(currState);
 
             // get last saved redo state and load it
             let prevState = this._redoHistory.pop();
-            this.loadFromSVGXML(prevState.svgxml);
+            this.loadSVGXML(prevState.svg);
 
             // re-select item from loaded state
             let selectedItem = this._model.findItem(prevState.selection);
@@ -546,12 +546,12 @@ class UIWorkspace {
             // save current state to redo history
             let content = this.toSVGXML();
             let selection = (this._selectedItem !== null) ? this._selectedItem.reference : null;
-            let currState = {"svgxml": this.toSVGXML(), "selection": selection};
+            let currState = {"svg": this.toSVGXML(), "selection": selection};
             this._redoHistory.push(currState);
 
             // get last saved undo state and load it
             let prevState = this._undoHistory.pop();
-            this.loadFromSVGXML(prevState.svgxml);
+            this.loadSVGXML(prevState.svg);
 
             // re-select item from loaded state
             let selectedItem = this._model.findItem(prevState.selection);
@@ -735,6 +735,15 @@ class UIWorkspace {
             }
         }
 
+        // build xml for each agent
+        let agents = this._model.items.filter(function(x) {
+            return x instanceof KAOSAgent;
+        })
+        for (const agent of agents) {
+            let child = agent.createLogicXMLElement(xmlDoc);
+            xmlRoot.appendChild(child);
+        }
+
         // build xml for each root
         let roots = this._model.findRoots();
         for (const root of roots) {
@@ -750,7 +759,7 @@ class UIWorkspace {
         return text;
     }
 
-    /** toSVGXML
+    /** toSVG
         Converts workspace to SVG xml.
         :return: svg xml
     **/
@@ -767,6 +776,37 @@ class UIWorkspace {
         let fontSize = (typeof TEXT_FONT_SIZE !== "undefined") ? TEXT_FONT_SIZE : 16;
         let style = "<style>text{font-family: " + fontFamily + ";font-size:" + (fontSize * 0.85) + "px;}</style>";
         text = text.replace("</defs>", "</defs>" + style);
+
+        return text;
+    }
+
+    /** toXML
+        Converts workspace to xml.
+        :return: svg xml
+    **/
+    toXML() {
+        // create xml document
+        let xmlDoc = document.implementation.createDocument("", "", null);
+        let xmlRoot = xmlDoc.createElement("KAOSModel");
+        xmlRoot.setAttribute("id", this._model.identifier);
+        xmlDoc.appendChild(xmlRoot);
+
+        // create xml parser
+        let parser = new DOMParser();
+
+        // add svg to xml
+        let svgDoc = parser.parseFromString(this.toSVGXML(), "image/svg+xml");
+        let svgRoot = svgDoc.documentElement;
+        xmlRoot.appendChild(svgRoot);
+
+        // add logic to xml
+        let logicDoc = parser.parseFromString(this.toLogicXML(), "text/xml");
+        let logicRoot = logicDoc.documentElement;
+        xmlRoot.appendChild(logicRoot);
+
+        // serialize xml document
+        let serializer = new XMLSerializer();
+        let text = serializer.serializeToString(xmlDoc);
 
         return text;
     }
@@ -1321,6 +1361,9 @@ class UIWorkspace {
             addedRelationships.push(...extra)
         }
         this._dragRelationships.push(...addedRelationships)
+
+        // record undo state
+        this.recordUndoState();
     }
 
     /** _dragEnd
@@ -1344,6 +1387,7 @@ class UIWorkspace {
 
         if (this._dragItem instanceof KAOSRelationship) {
             this._dragItem.targetAnchor = this._dragItem.target.chooseAnchor(pos);
+            this._dragItem.sourceAnchor = this._dragItem.source.chooseAnchor(pos);
             let p1 = this._dragItem.source.chooseAnchorPoint(pos);
             if (this._dragItem.sourceAnchor !== "") {
                 p1 = this._dragItem.source.anchors[this._dragItem.sourceAnchor];

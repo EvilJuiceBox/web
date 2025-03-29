@@ -193,10 +193,10 @@ function onModelValidateRequest(evt) {
     }
 }
 
-/** onOpenSVGRequest
-    Handles event for loading an SVG file.
+/** onOpenXMLRequest
+    Handles event for loading an XML file.
 **/
-function onOpenSVGRequest(evt) {
+function onOpenXMLRequest(evt) {
     // check for files
     if ((typeof this.files === "undefined") || (this.files.length === 0)) {
         if (_application !== null) {
@@ -207,7 +207,7 @@ function onOpenSVGRequest(evt) {
 
     // verify file type
     let file = this.files[0];
-    if ((file.type !== "image/svg+xml") && (file.type !== "text/plain") && (file.type !== "text/xml")) {
+    if (file.type !== "text/xml") {
         if (_application !== null) {
             _application.displayMessage("Unexpected file type.");
         }
@@ -218,7 +218,7 @@ function onOpenSVGRequest(evt) {
     reader.addEventListener("load", function(evt) {
         if (_application !== null) {
             // open file contents in application
-            _application.openSVGXML(evt.target.result);
+            _application.openXML(evt.target.result);
         }
     });
     reader.addEventListener("error", function() {
@@ -279,38 +279,14 @@ function onSaveJPEGRequest(evt) {
     }
 }
 
-/** onSaveKAOSRequest
-    Handles event for saving a KAOS xml file.
+/** onSaveXMLRequest
+    Handles event for saving an XML file.
 **/
-function onSaveKAOSRequest(evt) {
+function onSaveXMLRequest(evt) {
     if ((typeof evt.target !== "undefined") && (evt.target !== null)) {
         let destination = evt.target.getAttribute("data-destination");
         if (_application !== null) {
-            _application.saveKAOSXML(destination);
-        }
-    }
-}
-
-/** onSaveLogicRequest
-    Handles event for saving a logic xml file.
-**/
-function onSaveLogicRequest(evt) {
-    if ((typeof evt.target !== "undefined") && (evt.target !== null)) {
-        let destination = evt.target.getAttribute("data-destination");
-        if (_application !== null) {
-            _application.saveLogicXML(destination);
-        }
-    }
-}
-
-/** onSaveSVGRequest
-    Handles event for saving an SVG file.
-**/
-function onSaveSVGRequest(evt) {
-    if ((typeof evt.target !== "undefined") && (evt.target !== null)) {
-        let destination = evt.target.getAttribute("data-destination");
-        if (_application !== null) {
-            _application.saveSVGXML(destination);
+            _application.saveXML(destination);
         }
     }
 }

@@ -53,7 +53,7 @@ class KAOSRelationship extends KAOSItem {
         :param value: an anchor
     **/
     set sourceAnchor(value) {
-        this._sourceAnchor = value;
+        this._sourceAnchor = (value !== null) ? value : "";
         if (this._svgGroup !== null) {
             // update svg attribute for source reference
             this._svgGroup.setAttribute("data-source-anchor", this._sourceAnchor);
@@ -94,7 +94,7 @@ class KAOSRelationship extends KAOSItem {
         :param value: an anchor
     **/
     set targetAnchor(value) {
-        this._targetAnchor = value;
+        this._targetAnchor = (value !== null) ? value : "";
         if (this._svgGroup !== null) {
             // update svg attribute for target reference
             this._svgGroup.setAttribute("data-target-anchor", this._targetAnchor);

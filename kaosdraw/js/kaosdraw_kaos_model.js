@@ -139,7 +139,7 @@ class KAOSModel extends KAOSEntity {
         return item;
     }
 
-    /** findItem
+    /** findItems
         Finds all items with a given attribute value.
         :param value: an attribute value
         :param attribute: an attribute (default: "reference")

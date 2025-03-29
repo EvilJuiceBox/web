@@ -33,6 +33,13 @@ class UIColors {
             // get object type from constructor name and map it to an index in the palette
             let key = (obj !== null) ? obj.constructor.name : null;
             this._idx = (key in coloredObjects) ? coloredObjects[key] : null;
+
+            // Special check to color RELAXed goals green
+            if ((obj !== null) && (obj instanceof KAOSGoal)) {
+                if ((obj.utilityFunction !== null) && (obj.utilityFunction.type.includes('fuzzy'))) {
+                    this._idx = 2;
+                }
+            }
         }
     }
 

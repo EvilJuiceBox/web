@@ -65,12 +65,10 @@ class UIApplication {
 
         // init file save buttons
         this._lnkFileSaveJPEG = this._initSaveButton("lnk_file_savejpeg", onSaveJPEGRequest, "local");
-        this._lnkFileSaveKAOS = this._initSaveButton("lnk_file_savekaos", onSaveKAOSRequest, "local");
-        this._lnkFileSaveLogic = this._initSaveButton("lnk_file_savelogic", onSaveLogicRequest, "local");
-        this._lnkFileSaveSVG = this._initSaveButton("lnk_file_savesvg", onSaveSVGRequest, "local");
+        this._lnkFileSaveXML = this._initSaveButton("lnk_file_savexml", onSaveXMLRequest, "local");
 
         // initialize file dialogs
-        this._dlgFileOpenSVG = this._initFileDialog("dlg_file_opensvg", onOpenSVGRequest);
+        this._dlgFileOpenXML = this._initFileDialog("dlg_file_openxml", onOpenXMLRequest);
 
         // initialize message and overlay containers
         this._containerMessage = this._initContainer("message_container");
@@ -129,6 +127,8 @@ class UIApplication {
             this._initItemTextField("txt_item_operatingcondition_param1", "operatingCondition_param1", onItemFieldChange),
             this._initItemTextField("txt_item_operatingcondition_param2", "operatingCondition_param2", onItemFieldChange),
             this._initItemTextField("txt_item_operatingcondition_param3", "operatingCondition_param3", onItemFieldChange),
+            this._initItemGroup("grp_item_topic", "topic"),
+            this._initItemTextField("txt_item_topic", "topic", onItemFieldChange),
             this._initItemTextField("txt_item_utilityfunction_param1", "utilityFunction_param1", onItemFieldChange),
             this._initItemTextField("txt_item_utilityfunction_param2", "utilityFunction_param2", onItemFieldChange),
             this._initItemTextField("txt_item_utilityfunction_param3", "utilityFunction_param3", onItemFieldChange),
@@ -357,19 +357,58 @@ class UIApplication {
         }
     }
 
-    /** openSVGXML
-        Opens model from SVG XML file.
+    /** openXML
+        Opens model from XML file.
         :param text: text content from an SVG file
     **/
-    openSVGXML(text) {
-        // load workspace from svg xml
-        this._workspace.loadFromSVGXML(text);
+    openXML(text) {
+        // parse xml document
+        let parser = new DOMParser();
+        let xmlDoc = parser.parseFromString(text, "text/xml");
+        let xmlRoot = null;
+        if (xmlDoc.children.length !== 1) {
+            this.displayMessage("Invalid format of XML file.");
+            return;
+        }
+        if (xmlDoc.childNodes[0].nodeName === "KAOSModel") {
+            // set root to KAOSModel node
+            xmlRoot = xmlDoc.childNodes[0];
+        }
+        else if (xmlDoc.childNodes[0].nodeName === "svg") {
+            // set root to top-level node
+            xmlRoot = xmlDoc;
+        }
+        else {
+            this.displayMessage("Invalid format of XML file.");
+            return;
+        }
 
-        // update model attribute inputs
-        this._refreshModelInputs();
+        // locate svg root
+        let svgRoot = null;
+        for (const node of xmlRoot.childNodes) {
+            if (node.nodeName === "svg") {
+                svgRoot = node;
+                break;
+            }
+        }
 
-        // zoom to the center
-        this._workspace.zoomCenter();
+        if (svgRoot === null) {
+            this.displayMessage("Unable to load SVG from file.");
+        }
+        else {
+            // convert svg xml to text
+            let serializer = new XMLSerializer();
+            let svgText = serializer.serializeToString(svgRoot);
+
+            // load workspace from svg xml
+            this._workspace.loadSVGXML(svgText);
+
+            // update model attribute inputs
+            this._refreshModelInputs();
+
+            // zoom to the center
+            this._workspace.zoomCenter();
+        }
     }
 
     /** pointerDown
@@ -455,7 +494,7 @@ class UIApplication {
         }
     }
 
-    /** saveJPEGXML
+    /** saveJPEG
         Saves model as a jpeg file.
         :param destination: destination option for saving (default: "local")
     **/
@@ -499,65 +538,18 @@ class UIApplication {
         img.src = URL.createObjectURL(blob);
     }
 
-    /** saveKAOSXML
-        Saves model as a KAOS xml file.
+    /** saveXML
+        Saves model as an XML file.
         :param destination: destination option for saving (default: "local")
     **/
-    saveKAOSXML(destination="local") {
-        // cancel any selections
-        this._workspace.unselectItem();
-
-        // get kaos xml from model
-        let fileName = this._workspace.model.identifier + ".xml";
-        let fileContent = this._workspace.toKAOSXML();
-        let fileType = "text/xml";
-        switch (destination) {
-            case "local":
-                this._saveLocal(fileName, fileContent, fileType);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /** saveLogicXML
-        Saves model as a logic xml file.
-        :param destination: destination option for saving (default: "local")
-    **/
-    saveLogicXML(destination="local") {
-        // cancel any selections
-        this._workspace.unselectItem();
-
-        // TO DO: Remove
-        // display logic string to user
-        // this._workspace.displayMessage(this._workspace.toLogicText());
-        console.log(this._workspace.toLogicText());
-
-        // get kaos xml from model
-        let fileName = this._workspace.model.identifier + ".xml";
-        let fileContent = this._workspace.toLogicXML();
-        let fileType = "text/xml";
-        switch (destination) {
-            case "local":
-                this._saveLocal(fileName, fileContent, fileType);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /** saveSVGXML
-        Saves model as a SVG file.
-        :param destination: destination option for saving (default: "local")
-    **/
-    saveSVGXML(destination="local") {
+    saveXML(destination="local") {
         // cancel any selections
         this._workspace.unselectItem();
 
         // get svg xml from model
-        let fileName = this._workspace.model.identifier + ".svg";
-        let fileContent = this._workspace.toSVGXML();
-        let fileType = "image/svg+xml";
+        let fileName = this._workspace.model.identifier + ".xml";
+        let fileContent = this._workspace.toXML();
+        let fileType = "text/xml";
         switch (destination) {
             case "local":
                 this._saveLocal(fileName, fileContent, fileType);
@@ -613,8 +605,8 @@ class UIApplication {
         let elem = document.body;
         if (elem !== null) {
             // toggle theme
-            elem.classList.toggle("theme-light");
             elem.classList.toggle("theme-dark");
+            elem.classList.toggle("theme-light");
 
             // set input's text to the current theme
             button.innerHTML = elem.classList.item(0);
@@ -671,8 +663,8 @@ class UIApplication {
                 opts = (inputAttribute === "operatingCondition") ? OPERATING_CONDITIONS : opts;
                 opts = (inputAttribute === "utilityFunction") ? UTILITY_FUNCTIONS : opts;
                 for (let i = 0; i < opts.length; i++) {
-                    if (opts[i].func.type === inputElem.value) {
-                        values[inputAttribute] = opts[i].func.clone();
+                    if (opts[i].type === inputElem.value) {
+                        values[inputAttribute] = opts[i].clone();
                     }
                 }
                 break;
@@ -976,8 +968,8 @@ class UIApplication {
             elem.value = "";
             for (let i = 0; i < opts.length; i++) {
                 opt = document.createElement("option");
-                opt.value = opts[i].func.type;
-                opt.innerHTML = opts[i].func.type;
+                opt.value = opts[i].type;
+                opt.innerHTML = opts[i].type;
                 elem.appendChild(opt);
             }
         }

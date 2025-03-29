@@ -216,28 +216,6 @@ class KAOSUtilityElement extends KAOSElement {
         return size;
     }
 
-    /** _parseDescriptionFunction
-        Parse description into function.
-        :param text: text value
-        :return: matched function
-    **/
-    _parseDescriptionFunction(options, text) {
-        for (let i = 0; i < options.length; i++) {
-            let regexPatterns = options[i].regex;
-            for (let j = 0; j < regexPatterns.length; j++) {
-                let regexMatch = regexPatterns[j].exec(text);
-                if (regexMatch !== null) {
-                    let func = options[i].func.clone();
-                    for (let k = 1; k < regexMatch.length; k++) {
-                        func.setParameter(k, regexMatch[k]);
-                    }
-                    return func;
-                }
-            }
-        }
-        return null;
-    }
-
     /** _setAttributes
         Sets a collection of attribute values.
         :param values: a collection of attribute values

@@ -42,64 +42,14 @@ class KAOSOperatingCondition extends KAOSFunction {
 
 // don't change ordering!
 const OPERATING_CONDITIONS = [
-    {"func": new KAOSOperatingCondition("greater_or_equal", "{?} >= {?}"),
-     "regex": [
-        /^(.+)\s+>=\s+(.+)$/i,
-        /^(.+)\s+is\s+greater\s+than\s+or\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+is\s+greater\s+than\s+or\s+equals\s+(.+)$/i,
-        /^(.+)\s+greater\s+than\s+or\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+greater\s+than\s+or\s+equals\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("less_or_equal", "{?} <= {?}"),
-     "regex": [
-        /^(.+)\s+<=\s+(.+)$/i,
-        /^(.+)\s+is\s+less\s+than\s+or\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+is\s+less\s+than\s+or\s+equals\s+(.+)$/i,
-        /^(.+)\s+less\s+than\s+or\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+less\s+than\s+or\s+equals\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("not_equal", "{?} != {?}"),
-     "regex": [
-        /^(.+)\s+!=\s+(.+)$/i,
-        /^(.+)\s+does\s+not\s+equal\s+(.+)$/i,
-        /^(.+)\s+is\s+not\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+not\s+equal\s+to\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("equal", "{?} == {?}"),
-     "regex": [
-        /^(.+)\s+==\s+(.+)$/i,
-        /^(.+)\s+is\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+equal\s+to\s+(.+)$/i,
-        /^(.+)\s+equals\s+(.+)$/i,
-        /^(.+)\s+is\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("greater", "{?} > {?}"),
-     "regex": [
-        /^(.+)\s+>\s+(.+)$/i,
-        /^(.+)\s+is\s+greater\s+than\s+(.+)$/i,
-        /^(.+)\s+greater\s+than\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("less", "{?} < {?}"),
-     "regex": [
-        /^(.+)\s+<\s+(.+)$/i,
-        /^(.+)\s+is\s+less\s+than\s+(.+)$/i,
-        /^(.+)\s+less\s+than\s+(.+)$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("existence", "has {?}"),
-     "regex": [
-        /^has\s+(.+)$/i,
-        /^(.+)\s+does\s+exist$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("non-existence", "has no {?}"),
-     "regex": [
-        /^has no \s+(.+)$/i,
-        /^(.+)\s+does\s+not\s+exist$/i,
-    ]},
-    {"func": new KAOSOperatingCondition("membership", "{?} ∈ {?}"),
-     "regex": [
-        /^(.+)\s+∈\s+(.+)$/i,
-        /^(.+)\s+belongs to\s+(.+)$/i,
-        /^(.+)\s+in\s+(.+)$/i,
-    ]},
+    new KAOSOperatingCondition("greater_or_equal", "{?} >= {?}"),
+    new KAOSOperatingCondition("less_or_equal", "{?} <= {?}"),
+    new KAOSOperatingCondition("not_equal", "{?} != {?}"),
+    new KAOSOperatingCondition("equal", "{?} == {?}"),
+    new KAOSOperatingCondition("greater", "{?} > {?}"),
+    new KAOSOperatingCondition("less", "{?} < {?}"),
+    new KAOSOperatingCondition("existence", "has {?}"),
+    new KAOSOperatingCondition("non-existence", "has no {?}"),
+    new KAOSOperatingCondition("membership", "{?} ∈ {?}"),
+    new KAOSOperatingCondition("nonmembership", "{?} ∉ {?}"),
 ];
-
