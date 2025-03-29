@@ -1,0 +1,30 @@
+/** KAOSDraw
+    Created by: Michael Austin Langford
+**/
+
+*{
+    display: none;
+}
+form{
+    display: initial;
+}
+.center{
+    bottom: 0rem;
+    height: 100%;
+    display: initial;
+    left: 0rem;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    width: 100%;
+}
+.selectable{
+    display: initial;
+}
+svg{
+    border: 5 solid black;
+    display: initial;
+    font-size: 0.85rem;
+    height: 100%;
+    width: 100%;
+}
