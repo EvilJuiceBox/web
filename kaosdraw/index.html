@@ -1,0 +1,149 @@
+<!--  KAOSDraw
+      Created by: Michael Austin Langford
+
+      Note: For Firefox, make sure "dom.w3c_touch_events.enabled" is set to "1" in about:config for touch controls.
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>KAOSDraw</title>
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_dark.css">
+    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_light.css">
+    <link rel="stylesheet" type="text/css" media="only screen" href="css/kaosdraw_pink.css">
+    <link rel="stylesheet" type="text/css" media="only print" href="css/kaosdraw_print.css">
+    <script src="js/kaosdraw_kaos_entity.js"></script>
+    <script src="js/kaosdraw_kaos_function.js"></script>
+    <script src="js/kaosdraw_kaos_validator.js"></script>
+    <script src="js/kaosdraw_kaos_model.js"></script>
+    <script src="js/kaosdraw_kaos_item.js"></script>
+    <script src="js/kaosdraw_kaos_element.js"></script>
+    <script src="js/kaosdraw_kaos_relationship.js"></script>
+    <script src="js/kaosdraw_kaos_operatingcondition.js"></script>
+    <script src="js/kaosdraw_kaos_operatingelement.js"></script>
+    <script src="js/kaosdraw_kaos_utilityfunction.js"></script>
+    <script src="js/kaosdraw_kaos_utilityelement.js"></script>
+    <script src="js/kaosdraw_kaos_agent.js"></script>
+    <script src="js/kaosdraw_kaos_domainproperty.js"></script>
+    <script src="js/kaosdraw_kaos_conflict.js"></script>
+    <script src="js/kaosdraw_kaos_goal.js"></script>
+    <script src="js/kaosdraw_kaos_obstacle.js"></script>
+    <script src="js/kaosdraw_kaos_refinement.js"></script>
+    <script src="js/kaosdraw_kaos_resolution.js"></script>
+    <script src="js/kaosdraw_ui_application.js"></script>
+    <script src="js/kaosdraw_ui_colors.js"></script>
+    <script src="js/kaosdraw_ui_workspace.js"></script>
+    <script src="js/kaosdraw.js"></script>
+  </head>
+  <body class="theme-dark" onload="startup()">
+    <form>
+      <div id="workspace_container" class="workspace-container">
+          <!-- SVG will go here -->
+      </div>
+      <div id="toggle_container" class="toggle-container">
+        <a id="lnk_grid" class="link">grid</a>
+        <a id="lnk_theme" class="link">theme</a>
+      </div>
+      <div id="message_container" class="message-container hidden">
+          <div id="message_text" class="message">
+            <!-- message text will go here -->
+          </div>
+      </div>
+      <div class="left-container">
+        <fieldset>
+          <!-- Elements -->
+          <input id="btn_create_goal" type="button" value="Goal" title="Goals are desired system properties that have been expressed by stakeholders."/><br>
+          <input id="btn_create_obstacle" type="button" value="Obstacle" title="Obstacles are conditions that prevent goals from being satisfied."/><br>
+          <input id="btn_create_agent" type="button" value="Agent" title="Agents are either human beings or automated components that are responsible for achieving requirements/expectations."/><br>
+          <!--<input id="btn_create_domainproperty" type="button" value="Domain Property" title="Domain properties are properties relevant to the application domain."/><br>-->
+        </fieldset>
+        <fieldset class="buttons">
+          <!-- Refinements -->
+          <input id="btn_connect_refinement" type="button" value="Refinement" title="Relationship linking a goal to subgoals. Each subgoal contributes to the satisfaction of the goal it refines."/><br>
+        </fieldset>
+        <input id="btn_zoom_in" type="button" class="zoom" value="+"/>
+        <input id="btn_zoom_out" type="button" class="zoom" value="&ndash;"/>
+        <input id="btn_zoom_center" type="button" class="zoom" value="&oplus;"/>
+      </div>
+      <div class="right-container">
+        <fieldset id="fld_model">
+          <legend id="lgd_model">KAOS Model</legend>
+          <input id="hdn_model_reference" class="hidden"/>
+          <label>Model Name<br><input id="txt_model_identifier" type="text" title="Uniquely identifies the KAOS model."/></label>
+          <div>
+            <label>Open</label>
+            <label class="link">XML<input id="dlg_file_openxml" type="file" class="hidden" accept="text/xml"/></label>
+            <label>Save</label>
+            <label id="lnk_file_savexml" class="link">XML</label>
+            <label>Export</label>
+            <label id="lnk_file_savejpeg" class="link">JPEG</label>
+            <label id="lnk_model_validate" class="link right">Validate</label>
+          </div>
+        </fieldset>
+        <fieldset id="fld_item" class="hidden">
+          <legend id="lgd_item">Item</legend>
+          <input id="hdn_item_reference" class="hidden"/>
+          <div id="grp_item_definition" class="hidden">
+            <label>Definition</label><br>
+            <label id="txt_item_definition" class="text definition"></label><br>
+          </div>
+          <div id="grp_item_identifier" class="hidden">
+            <label>Identifier<br><input id="txt_item_identifier" type="text" title="Unique identifier for the graphical element."/></label><br>
+          </div>
+          <div id="grp_item_ismaintain" class="hidden">
+            <label><input id="chk_item_ismaintain" type="checkbox" title="Designates an invariant (must always be satisfied)."/>Maintain</label>
+            <label><input id="chk_item_isachieve" type="checkbox" title="Designates a non-invariant (can sometimes be unsatisfied)."/>Achieve</label>
+            <label><input id="chk_item_isavoid" type="checkbox" title="Designates an invariant (must never be satisfied)."/>Avoid</label>
+          </div>
+          <div id="grp_item_isachieve" class="hidden">
+          </div>
+          <div id="grp_item_isavoid" class="hidden">
+          </div>
+          <div id="grp_item_description" class="hidden">
+            <label>Description<br><textarea id="txt_item_description" title="Descriptive text for the element."></textarea></label><br>
+          </div>
+          <div id="grp_item_topic" class="hidden">
+            <label>Topic<br><input id="txt_item_topic" type="text"/></label><br>
+          </div>
+          <div id="grp_item_operatingcondition" class="hidden">
+            <label>Operating Condition<br><select id="sel_item_operatingcondition"></select></label><br>
+          </div>
+          <div id="grp_item_operatingcondition_param1" class="hidden">
+            <label>Parameter #1 <input id="txt_item_operatingcondition_param1" type="text" class="short"/></label><br>
+          </div>
+          <div id="grp_item_operatingcondition_param2" class="hidden">
+            <label>Parameter #2 <input id="txt_item_operatingcondition_param2" type="text" class="short"/></label><br>
+          </div>
+          <div id="grp_item_operatingcondition_param3" class="hidden">
+            <label>Parameter #3 <input id="txt_item_operatingcondition_param3" type="text" class="short"/></label><br>
+          </div>
+          <div id="grp_item_utilityfunction" class="hidden">
+            <label>Utility Function<br><select id="sel_item_utilityfunction"></select></label><br>
+          </div>
+          <div id="grp_item_utilityfunction_param1" class="hidden">
+            <label>Parameter #1 <input id="txt_item_utilityfunction_param1" type="text" class="short"/></label><br>
+          </div>
+          <div id="grp_item_utilityfunction_param2" class="hidden">
+            <label>Parameter #2 <input id="txt_item_utilityfunction_param2" type="text" class="short"/></label><br>
+          </div>
+          <div id="grp_item_utilityfunction_param3" class="hidden">
+            <label>Parameter #3 <input id="txt_item_utilityfunction_param3" type="text" class="short"/></label><br>
+          </div>
+          <div>
+            <br>
+            <input id="btn_item_forward" type="button" class="field" value="Forward"/>
+            <input id="btn_item_backward" type="button" class="field" value="Backward"/>
+            <input id="btn_item_delete" type="button" class="field" value="Remove"/>
+          </div>
+        </fieldset>
+      </div>
+      <div id="overlay_container" class="validation-container hidden">
+          <div id="overlay_text" class="validation">
+            <!-- overlay text will go here -->
+          </div>
+      </div>
+    </form>
+  </body>
+</html>
