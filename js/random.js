@@ -49,7 +49,7 @@ $(function() { // shorthand for `$(document).ready(function() {
         "Probably out coffee hunting.",
         "My favourite number is 20.",
         "42 is the ultimate question of life, the universe, and everything.",
-        "Photograph Ed Sheeran is my favourite song.",
+        "Photograph by Ed Sheeran is my favourite song.",
         "Tom Scholz (Boston band) is an electrical engineer who revolutionised the guitar amplifier to prevent blow out.",
         "I built this website from scratch in a week!",
         "The letter 'q' does not appear in any state names.",
