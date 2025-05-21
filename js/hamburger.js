@@ -19,7 +19,7 @@ function toggleHamburger() {
           // show the menu
           x.style.display = "flex";
           header.style.height = "40vh";
-          navbar.style.height = "23vh";
+          navbar.style.height = "25vh";
         }
       }
   }
