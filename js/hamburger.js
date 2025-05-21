@@ -1,8 +1,8 @@
 function toggleHamburger() {
-    const dropdownbtns = document.getElementsByClassName("dropdown-primary");
-    for (let i = 0; i < dropdownbtns.length; i++) {
-        dropdownbtns[i].href = "javascript:void(0)";
-    }
+    // const dropdownbtns = document.getElementsByClassName("dropdown-primary");
+    // for (let i = 0; i < dropdownbtns.length; i++) {
+    //     dropdownbtns[i].href = "javascript:void(0)";
+    // }
 
     let x = document.getElementById("navbar_right");
     let header = document.getElementById("header");
