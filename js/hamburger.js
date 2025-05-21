@@ -34,5 +34,4 @@ function resetHamburger() {
     x.style.display = "none";
     header.style.height = "20vh";
     navbar.style.height = "5vh";
-
 }
