@@ -43,7 +43,7 @@
       <div class="even">
         <div class="paper_title">Towards diverse AV testing using genetic programming and behavior trees</div>
         <div class="paper_descriptions">Co-authors: Sol Zilberman and Betty H.C. Cheng</div>
-        <div class="publisher_info">Submitted to ACSOS 2025</div>
+        <div class="publisher_info">Submitted to conference 2025</div>
         <!-- <div class="download_pdf"><a href="./publications/">PDF</a></div> -->
         <div class="container">
           <div class="project_subimage"><p>Increased diverseness in agent behaviors</p><img src="./images/projects/evodriver/results.jpg" alt="results for evodriver"></div>
@@ -58,20 +58,19 @@
 
       <!-- JanusRL -->
       <div class="odd">
-        <div class="paper_title">A Model-Based Approach for Realizing Multi-Agent Traffic Simulations to Explore Human-Based Uncertainty</div>
+        <div class="paper_title">SavviDriver: Model-based Framework for
+          Game-based Testing of Autonomous Vehicles in Diverse Multi-agent Traffic Scenarios</div>
         <div class="paper_descriptions">Co-authors: Sol Zilberman and Betty H.C. Cheng </div>
         <div class="publisher_info">In Press for SoSym</div>
         <!-- <div class="download_pdf"><a href="./publications/">PDF</a></div> -->
         <div class="container">
-          <div class="project_subimage2"><p>MODA-based diagram for JanusRL</p><img src="./images/projects/janusrl/moda.png" alt="MODA-based diagram for JanusRL"></div>
-          <div class="project_subimage"><p>Agent refinement using i* and KAOS</p><img src="./images/projects/janusrl/refinement.png" alt="Agent refinement using i* and KAOS"></div>
-          
+          <div class="project_subimage"><p>Reward shaping and decomposition with SavviDriver</p><img src="./images/projects/savvidriver/decompose.png" alt="Goal-tree decomposition"></div>
+          <div class="project_subimage2"><p>Multi-agent testing with SavviDriver and example goal tree</p><img src="./images/projects/savvidriver/savvi_example.png" alt="SavviDriver example"></div>
+             
         </div>
         <div class="description">
             <p>Existing research has demonstrated that human-based uncertainty can be simulated and used to discover previously unseen maneuvers using non-cooperative game theory and reinforcement learning. 
-            This work introduces an agent-based MODA goal modeling framework to provide a systematic process to discover unexpected behaviors or undesirable interactions and enable the robustification of the AV under study. Our premise is that existing approaches uses an ad hoc approach to define the reward function. We propose the use of the i* (istar) model to capture high level societal interactions between the different types of agents in an environment. Next, the non-functional objectives (i.e., aggressive driving) of each agent are further refined into functional objectives using the KAOS goal modeling language.
-            Different use cases were provided to demonstrate that our approach can systematically refine high-level human driving styles into functional and non-functional goals. RL can then be used to operationalize the information, discovering failures in AVs and improving the robustness of the AV.
-            We showed that a model-based approach enables reusability and extendability through multi-agent simulation, a direction previously not explored.</p>
+            This work introduces a model-based approach to provide a systematic process for reward shaping. Specifically, reward shaping describes the process of engineering a reward function for RL and other search-based approaches. As the search is guided by this reward function, it is often sensitive to hyperparameters and other domain-specific reward components. However, existing approaches use an ad-hoc approach to reward shaping, where a developer uses their domain expertise, experience, and trial-and-error to identify optimal reward functions for agent training. Our propose describes how we use goal-based models (i.e., inspired by KAOS goal models) to hierarchically decompose high-level agent objectives into low-level system requirements, which can then be used to form the reward function. We demonstrate how our approach allows rapid reconfiguration of agent rewards in a multi-agent game-based setting, where we discover previously unseen human-based uncertainty. </p>
         </div>
       </div>
 
